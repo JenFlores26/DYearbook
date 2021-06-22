@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 2rem;
+}
+
+table {
+  text-align: left;
+  position: relative;
+  border-collapse: collapse; 
+  width: 250%;
+
+}
+th, td {
+  padding: 0.75rem;
+  background-color: white;
+  font-size: 13px;
+    font-family: 'Tahoma';
+}
+tr.red th {
+  background: #0275d8;
+  color: white;
+
+}
+
+th {
+  background: white;
+  height: 20px;
+  position: sticky;
+  top: 0; /* Don't forget this, required for the stickiness */
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
+
+
+}
