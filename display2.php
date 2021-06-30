@@ -14,10 +14,13 @@
 <head>
   <title>My Yearbook</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="D1.css">
+<link rel="stylesheet" type="text/css" href="styles/styles2.css">
 <link rel="shortcut icon" href="CvSU/logo.ico">
 <style>
 body {margin:0;font-family:Oswald}
+#parallax-world-of-ugg .parallax-one {
+  background-image: url("CvSU/quad.jpg");
+}
 
 .topnav {
  display: inline-block;
