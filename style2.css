@@ -21,8 +21,20 @@ body {
   border-radius: 10px 10px 0px 0px;
   padding: 20px;
 }
-
-form, .content {
+.button {
+    border-radius: 5px;
+    border:none;
+    color: white;
+    height: 40px;
+    width: 98.5%;
+    padding: 10px 10px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+form{
   width: 30%;
   margin: 0px auto;
   padding: 20px;
@@ -47,8 +59,6 @@ form, .content {
   border: 1px solid gray;
   font-family: 'Ubuntu', sans-serif;
 }
-
-}
 .btn {
       cursor: pointer;
         border-radius: 5em;
@@ -63,55 +73,44 @@ form, .content {
         margin-left: 35%;
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-    
+
 }
 .error {
-  width: 95%; 
-  margin: 0px auto; 
-  padding: 5px; 
-  border: 1px solid #a94442; 
-  color: #a94442; 
-  background: #f2dede; 
-  border-radius: 5px; 
+  width: 95%;
+  margin: 0px auto;
+  padding: 5px;
+  border: 1px solid #a94442;
+  color: #a94442;
+  background: #f2dede;
+  border-radius: 5px;
   text-align: left;
   font-family: 'Ubuntu', sans-serif;
   font-size: 10px;
 }
 .success {
-  color: #3c763d; 
-  background: #dff0d8; 
+  color: #3c763d;
+  background: #dff0d8;
   border: 1px solid #3c763d;
   margin-bottom: 20px;
 }
-
-/*TABLES */
-
-#customers {
-  font-family: Arial, Helvetica, sans-serif;
-  border-collapse: collapse;
-  width: 250%;
+.button1 {background: linear-gradient(to right, #5bc0de, #5bc0de);}/* Green */
+.button2 {background: linear-gradient(to right, #9C27B0, #E040FB);} /* Blue */
+@media screen and (max-width: 950px) {
+  .header{
+    width: 50%;
+  }
+  form{
+    width: 50%;
+  }
 }
-
-#customers td, #customers th {
-  border: 1px solid #ddd;
-  padding: 8px;
-
-}
-
-#customers tr:nth-child(even){
-  background-color: lightgray;
-}
-#customers tr:nth-child(odd){
-  background-color: white;
-}
-#customers tr:hover {
-  background-color: yellow;
-}
-
-#customers th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  text-align: left;
-  background-color: #0275d8;
-  color: white;
+@media only screen and (max-width:600px){
+  .header{
+    width: 70%;
+  }
+  form{
+    width: 70%;
+  }
+  rc-anchor-light.rc-anchor-normal{
+    width: 70%;
+  }
 }
