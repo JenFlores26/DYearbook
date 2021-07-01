@@ -1,5 +1,4 @@
 <?php
-//keme
     session_start();
 
     if(!isset($_SESSION['User3']))
@@ -58,7 +57,7 @@ body {margin:0;font-family:Oswald}
 }
 
 .dropdown .dropbtn {
-  font-size: 17px;    
+  font-size: 17px;
   border: none;
   outline: none;
   color: white;
@@ -156,14 +155,14 @@ body {margin:0;font-family:Oswald}
   <a href="latest.php">Latest</a>
   <a href="#forums">Forums</a>
   <div class="dropdown">
-    <button class="dropbtn">About &#8711; 
+    <button class="dropbtn">About &#8711;
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
       <a href="history.php">About the History</a>
       <a href="about.php">About the Developer</a>
     </div>
-  </div> 
+  </div>
   <a href="logout3.php">Logout</a>
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
@@ -181,7 +180,7 @@ function myFunction() {
 }
 </script>
   <div id="parallax-world-of-ugg">
-  
+
 <section>
   <div class="title">
     <h3>Graduates of</h3>
@@ -213,12 +212,12 @@ It shall strive to achieve responsible service that will contribute to the commo
 towards community building, national development and global solidarity.</p>
   </div>
 </section>
-</div><!--End of Palax--> 
+</div><!--End of Palax-->
 
 <section>
   <h2 class="board" style="font-family: 'Dancing Script', cursive; font-size: 50px; margin-top: 0;">- Administrative Officers -</h2>
    <div class="yb-php">
-  <?php 
+  <?php
   $db=mysqli_connect('localhost','root','','yearbook');
   $goo= $_SESSION['Users3'];
          $user_check_query = "SELECT * FROM  tab2 WHERE year = '$goo'";
@@ -244,7 +243,7 @@ towards community building, national development and global solidarity.</p>
 <section>
   <h2 class="board"style="font-family: 'Dancing Script', cursive; font-size: 50px; margin-top: 0;">- Academic Affairs -</h2>
    <div class="yb-php">
-  <?php 
+  <?php
   $db=mysqli_connect('localhost','root','','yearbook');
   $goo= $_SESSION['Users3'];
          $user_check_query = "SELECT * FROM tab3 WHERE year = '$goo'";
@@ -271,7 +270,7 @@ towards community building, national development and global solidarity.</p>
 
   <h2 class="board" style="font-family: 'Dancing Script', cursive; font-size: 50px;margin-top:0;">- The Graduates -</h2>
    <div class="yb-php">
-  <?php 
+  <?php
   $db=mysqli_connect('localhost','root','','yearbook');
   $goo= $_SESSION['Users3'];
          $user_check_query = "SELECT * FROM shs WHERE year='$goo' ORDER BY lname";
@@ -297,7 +296,7 @@ towards community building, national development and global solidarity.</p>
 <section>
   <h2 class="board"style="font-family: 'Dancing Script', cursive; font-size: 50px; margin-top: 0;">- Milestones & Activities -</h2>
    <div class="yb-php2">
-  <?php 
+  <?php
   $db=mysqli_connect('localhost','root','','yearbook');
   $goo= $_SESSION['Users3'];
          $user_check_query = "SELECT * FROM tab11 WHERE year = '$goo'";
@@ -308,7 +307,7 @@ towards community building, national development and global solidarity.</p>
             echo "<tr>";
             echo "<td class='unselectable'><img class='imahe' src='data:image/jpeg;base64,".base64_encode($row['image1'] )."'></td><br>";
             echo "</tr>";
-            echo "</table>";   
+            echo "</table>";
       }
   ?>
    </div>
