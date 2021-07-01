@@ -17,7 +17,6 @@
 <link rel="shortcut icon" href="CvSU/logo.ico">
 <style>
 body {margin:0;font-family:Oswald}
-
 .topnav {
  display: inline-block;
     margin: 0 auto;
@@ -56,7 +55,7 @@ body {margin:0;font-family:Oswald}
 }
 
 .dropdown .dropbtn {
-  font-size: 17px;    
+  font-size: 17px;
   border: none;
   outline: none;
   color: white;
@@ -138,19 +137,17 @@ body {margin:0;font-family:Oswald}
   <a href="#forums">Forums</a>
   <div class="dropdown">
     <button class="dropbtn" style="background-color: darkcyan;
-  color: white;">About &#8711; 
+  color: white;">About &#8711;
       <i class="fa fa-caret-down"></i>
     </button>
     <div class="dropdown-content">
       <a href="history.php" class="active">About the History</a>
       <a href="about.php">About the Developer</a>
     </div>
-  </div> 
+  </div>
   <a href="logout3.php">Logout</a>
   <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
-
-<div>
 
 <script>
 function myFunction() {
@@ -162,29 +159,47 @@ function myFunction() {
   }
 }
 </script>
-<div>
 <div id="parallax-world-of-ugg">
-<section>
+<section class="main-section">
   <div class="title">
-<center><p style="font-size: 80px;font-family: 'Oswald';margin-bottom: 45px;"><u>ABOUT THE HISTORY</u></p></center>
-<center><p style="font-size: 40px;font-family: 'Oswald';margin-top: 0;">A TRUE STORY BEHIND</p></center>
-
-  <center><img src="CvSU/dfcam.jpg" style="width:1048px; height: 865px; border:5px solid;border-color:#020cbd; "></center>
-  <center><p style="margin-top: 0;"><i>Photo of DFCAMCLP Building</i></p></center>
-
-  <p style="font-size: 20px;margin-left: 10px;margin-right: 10px;text-align: justify; font-family: Roboto Slab, Serif;">&nbsp;&nbsp;&nbsp;&nbsp;DFCAMCLP started as a special project of <strong>former Mayor Vergel "Nene" A. Aguilar </strong>which is backed up and supported by his wife, the incumbient <strong>City Mayor Imelda T. Aguilar. </strong>City Ordinance <strong>No. 352-97 Series of 1997 </strong>was enacted on <strong>August 13, 1997 </strong>establishing DFCAMC.</p><br><br>
-
-  <center><img src="CvSU/dr.png" style="width: 380px; height: 400px;border:5px solid;border-color:#020cbd;"></center>
-  <center><p style="margin-top: 0;"><i>Photo of Dr. Filemon C. Aguilar</i></p></center>
-
-  <p style="font-size: 20px;margin-left: 10px;margin-right: 10px;text-align: justify; font-family: Roboto Slab, Serif;">&nbsp;&nbsp;&nbsp;The school was named in honor of his father namely,<strong> Dr. Filemon C. Aguilar</strong>. In <strong>March 12, 1998</strong>, the inauguration of a campus is also the birthdate of DFCAMCLP Founder Former Mayor <strong>Imelda "Nene" Aguilar</strong>. DFCAMC began to offer courses of <strong>Bachelor of Science in Business Administration Major in Management, Marketing, Entrepreneurship, Economics and Banking and Finance</strong> in <strong>March 12, 1998</strong> with a total of <strong>1,083</strong> enrolled from various secondary schools. In <strong>October 7, 1998</strong>, the issuance of <b>City Accordance No. 417-A-98</b> correct the spelling of Felimon to Filemon. The College Offered a new program, the <b>Bachelor of Science in Accountancy</b>. It is complimented it's other program, the <b>Bachelor of Science in Business Accountancy</b> strengthening DFCAMC’s mandate to become a full-blown school of business. In a year <b>2000</b>, the school affiliated with <b>American Civil Liberties Union</b> making its presence felt across the region. The college disproved the elitist notion that quality education is the monopoly with expensive private colleges and universities. The first commencement exercises was held at Aguilar Sports Complex in Pilar Village, Las Piñas City in <b>April 5, 2002</b> with <b>558</b> graduates. In October 2003, DFCAMCLP produced its first three CPA passers with 50% passing rate. In April 2009, the City Ordinance No. 887-09 Series of 2009 changed the name of the school to <b>Dr. Filemon C. Aguilar Memorial College of Las Piñas (DFCAMCLP)</b>. </p><br><br>
-
-<center><img src="CvSU/dfcamit.jpg" style="width: 1048px; height: 865px; border:5px solid;border-color:#020cbd;"></center>
-  <center><p style="margin-top: 0;font-weight:lighter;"><i>Photo of DFCAMCLP-IT Building</i></p></center>
-
-  <p style="font-size: 20px;margin-left: 10px;margin-right: 10px;text-align: justify; font-family: Roboto Slab, Serif;">&nbsp;&nbsp;&nbsp;From 2019 to present, the school named <b>Dr. Filemon C. Aguilar Information Technology Training Institute</b> change it's name into <b>Dr. Filemon C. Aguilar Memorial College of Las Piñas - Information Technology Campus.</b></p>
-</section>
+    <p><u>About the history</u></p>
+    <p>A true story behind</p>
   </div>
+
+    <img class="old-building" src="CvSU/dfcam.jpg">
+    <p class="disc"><i>Photo of DFCAMCLP Building</i></p>
+
+  <div class="parag">
+    <p>DFCAMCLP started as a special project of <strong>former Mayor Vergel "Nene" A. Aguilar
+    </strong>which is backed up and supported by his wife, the incumbient <strong>City Mayor Imelda T. Aguilar.
+    </strong>City Ordinance <strong>No. 352-97 Series of 1997 </strong>was enacted on <strong>August 13, 1997
+    </strong>establishing DFCAMC.</p><br><br></p>
+  </div>
+  <img class="dr" src="CvSU/dr.png">
+  <p class="disc"><i>Photo of Dr. Filemon C. Aguilar</i></p>
+
+  <div class="parag">
+    <p>The school was named in honor of his father namely,<strong> Dr. Filemon C. Aguilar</strong>. In <strong>March 12, 1998</strong>,
+      the inauguration of a campus is also the birthdate of DFCAMCLP Founder Former Mayor <strong>Imelda "Nene" Aguilar</strong>.
+       DFCAMC began to offer courses of <strong>Bachelor of Science in Business Administration Major in Management, Marketing, Entrepreneurship
+      , Economics and Banking and Finance</strong> in <strong>March 12, 1998</strong> with a total of <strong>1,083</strong>
+       enrolled from various secondary schools. In <strong>October 7, 1998</strong>, the issuance of <b>City Accordance No. 417-A-98</b>
+        correct the spelling of Felimon to Filemon. The College Offered a new program, the <b>Bachelor of Science in Accountancy</b>.
+         It is complimented it's other program, the <b>Bachelor of Science in Business Accountancy</b> strengthening DFCAMC’s mandate
+          to become a full-blown school of business. In a year <b>2000</b>, the school affiliated with <b>American Civil Liberties Union</b>
+           making its presence felt across the region. The college disproved the elitist notion that quality education is the monopoly
+            with expensive private colleges and universities. The first commencement exercises was held at Aguilar Sports Complex
+            in Pilar Village, Las Piñas City in <b>April 5, 2002</b> with <b>558</b> graduates. In October 2003, DFCAMCLP produced
+             its first three CPA passers with 50% passing rate. In April 2009, the City Ordinance No. 887-09 Series of 2009 changed the
+             name of the school to <b>Dr. Filemon C. Aguilar Memorial College of Las Piñas (DFCAMCLP)</b>. </p><br><br></p>
+  </div>
+
+  <img class="old-building" src="CvSU/dfcamit.jpg">
+  <p class="disc"><i>Photo of DFCAMCLP-IT Building</i></p>
+  <div class="parag">
+    <p>From 2019 to present, the school named <b>Dr. Filemon C. Aguilar Information Technology Training Institute</b> change it's name into <b>Dr. Filemon C. Aguilar Memorial College of Las Piñas - Information Technology Campus.</b></p>
+  </div>
+</section>
 </div>
 </body>
 </html>
