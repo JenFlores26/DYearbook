@@ -1,4 +1,5 @@
 <?php
+//keme
     session_start();
 
     if(!isset($_SESSION['User3']))
@@ -114,7 +115,6 @@ body {margin:0;font-family:Oswald}
   width:280px;
   height:350px;
 }
-
 /* Media */
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child), .dropdown .dropbtn {
@@ -125,7 +125,6 @@ body {margin:0;font-family:Oswald}
     display: block;
   }
 }
-
 @media screen and (max-width: 600px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive .icon {
@@ -164,11 +163,13 @@ body {margin:0;font-family:Oswald}
     </div>
   </div>
   <a href="logout3.php">Logout</a>
-  <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+  <a href="javascript:void(0);"
+     style="font-size:15px;"
+     class="icon"
+     onclick="myFunction()">&#9776;</a>
 </div>
 
 <div>
-
 <script>
 function myFunction() {
   var x = document.getElementById("myTopnav");
@@ -215,7 +216,7 @@ towards community building, national development and global solidarity.</p>
 </div><!--End of Palax-->
 
 <section>
-  <h2 class="board" style="font-family: 'Dancing Script', cursive; font-size: 50px; margin-top: 0;">- Administrative Officers -</h2>
+  <h2 class="board">- Administrative Officers -</h2>
    <div class="yb-php">
   <?php
   $db=mysqli_connect('localhost','root','','yearbook');
@@ -241,7 +242,7 @@ towards community building, national development and global solidarity.</p>
    </div>
 </section>
 <section>
-  <h2 class="board"style="font-family: 'Dancing Script', cursive; font-size: 50px; margin-top: 0;">- Academic Affairs -</h2>
+  <h2 class="board">- Academic Affairs -</h2>
    <div class="yb-php">
   <?php
   $db=mysqli_connect('localhost','root','','yearbook');
@@ -268,7 +269,7 @@ towards community building, national development and global solidarity.</p>
 </section>
 
 
-  <h2 class="board" style="font-family: 'Dancing Script', cursive; font-size: 50px;margin-top:0;">- The Graduates -</h2>
+  <h2 class="board">- The Graduates -</h2>
    <div class="yb-php">
   <?php
   $db=mysqli_connect('localhost','root','','yearbook');
@@ -294,7 +295,7 @@ towards community building, national development and global solidarity.</p>
    </div>
 
 <section>
-  <h2 class="board"style="font-family: 'Dancing Script', cursive; font-size: 50px; margin-top: 0;">- Milestones & Activities -</h2>
+  <h2 class="board">- Milestones & Activities -</h2>
    <div class="yb-php2">
   <?php
   $db=mysqli_connect('localhost','root','','yearbook');
