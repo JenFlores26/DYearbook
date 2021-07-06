@@ -13,10 +13,9 @@
 <head>
   <title>My Yearbook</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="D1.css">
-<link rel="shortcut icon" href="CvSU/logo.ico">
+<link rel="stylesheet" type="text/css" href="styles/style2.css">
+<link rel="shortcut icon" href="styles/CvSU/logo.ico">
 <style>
-body {margin:0;font-family:Oswald}
 
 .topnav {
  display: inline-block;
@@ -190,7 +189,7 @@ function myFunction() {
 
 <section>
     <div class="parallax-one">
-      <img src="CvSU/logo-removebg.png" style="width:250px;height:250px;">
+      <img src="styles/CvSU/logo-removebg.png" style="width:250px;height:250px;">
       <h2 style="text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;">KABATAAN, TAGAPAGDALA NG KAUNLARAN SA BANSANG PILIPINAS</h2>
     </div>
 </section>
@@ -316,7 +315,7 @@ towards community building, national development and global solidarity.</p>
 </section>
  </div>
  <div style="background-color:#333" align="center">
-  <a href="https://www.laspinascity.gov.ph/"><img src="CvSU/lpc.jpg" style="width: 250px;height: 200px;"></a>
+  <a href="https://www.laspinascity.gov.ph/"><img src="styles/CvSU/lpc.jpg" style="width: 250px;height: 200px;"></a>
 </div>
 
 </body>

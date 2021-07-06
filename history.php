@@ -13,10 +13,9 @@
 <head>
   <title>About History</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="D1.css">
-<link rel="shortcut icon" href="CvSU/logo.ico">
+<link rel="stylesheet" type="text/css" href="styles/style2.css">
+<link rel="shortcut icon" href="styles/CvSU/logo.ico">
 <style>
-body {margin:0;font-family:Oswald}
 .topnav {
  display: inline-block;
     margin: 0 auto;
@@ -166,7 +165,7 @@ function myFunction() {
     <p>A true story behind</p>
   </div>
 
-    <img class="old-building" src="CvSU/dfcam.jpg">
+    <img class="old-building" src="styles/CvSU/dfcam.jpg">
     <p class="disc"><i>Photo of DFCAMCLP Building</i></p>
 
   <div class="parag">
@@ -175,7 +174,7 @@ function myFunction() {
     </strong>City Ordinance <strong>No. 352-97 Series of 1997 </strong>was enacted on <strong>August 13, 1997
     </strong>establishing DFCAMC.</p><br><br></p>
   </div>
-  <img class="dr" src="CvSU/dr.png">
+  <img class="dr" src="styles/CvSU/dr.png">
   <p class="disc"><i>Photo of Dr. Filemon C. Aguilar</i></p>
 
   <div class="parag">
@@ -194,7 +193,7 @@ function myFunction() {
              name of the school to <b>Dr. Filemon C. Aguilar Memorial College of Las Piñas (DFCAMCLP)</b>. </p><br><br></p>
   </div>
 
-  <img class="old-building" src="CvSU/dfcamit.jpg">
+  <img class="old-building" src="styles/CvSU/dfcamit.jpg">
   <p class="disc"><i>Photo of DFCAMCLP-IT Building</i></p>
   <div class="parag">
     <p>From 2019 to present, the school named <b>Dr. Filemon C. Aguilar Information Technology Training Institute</b> change it's name into <b>Dr. Filemon C. Aguilar Memorial College of Las Piñas - Information Technology Campus.</b></p>
