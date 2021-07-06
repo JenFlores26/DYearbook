@@ -17,7 +17,6 @@ if(isset($_SESSION['User3'])) {
 <html>
 <head>
   <title>Login</title>
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <link rel="stylesheet" href="style2.css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -25,7 +24,7 @@ if(isset($_SESSION['User3'])) {
   <link rel="shortcut icon" href="CvSU/logo.ico">
 <style>
   body{
-    background-image: url("CvSU/quad.jpg");
+  background-image: url("CvSU/quad.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -50,7 +49,6 @@ if(isset($_SESSION['User3'])) {
     <div style="font-size: 15px;">
       <input type="checkbox" onclick="myFunc()" style="width:20px;">Show Password
     </div><br>
-    <div class="g-recaptcha" data-sitekey="6LcM5gAbAAAAAMU0nZe9hU6aVXHm6sXCJ4CcAU4j" align="center"></div>
     <div class="input-group">
       <button class="button button1" name="lc">Login</button>
       <p style="font-size: 15px;">
