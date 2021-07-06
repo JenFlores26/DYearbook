@@ -4,30 +4,12 @@
 <head>
   <title>Register</title>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="styles/style1.css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  <link rel="shortcut icon" href="CvSU/logo.ico">
+  <link rel="shortcut icon" href="styles/CvSU/logo.ico">
   <style>
-  body{
-    background-image: url("CvSU/quad.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  margin-bottom: 10px;
-  margin-top: 10px;
-  }
-
-  select{
-  height: 40px;
-  width: 99%;
-  padding: 5px 10px;
-  font-size: 16px;
-  border-radius: 5px;
-  border: 1px solid gray;
-  font-family: 'Ubuntu', sans-serif;
-}
 #message {
   display:none;
   background: white;
@@ -164,7 +146,6 @@ myInput.onkeyup = function() {
     <div class="input-group">
       <input type="number" name="year"  placeholder="Batch Year" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" onkeypress="return isNumberKey(event)" maxlength="4" value="<?php echo $contacts; ?>" required>
     </div>
-    <div style="margin-left: 30px;" class="g-recaptcha" data-sitekey="6LcM5gAbAAAAAMU0nZe9hU6aVXHm6sXCJ4CcAU4j"></div>
     <p style="font-size: 10px;text-align: justify;">Due to the RA10173 or simply known as the "Data Privacy Act of 2012", by clicking the "Register" button, you are consenting us to use your information for this system.</p>
   	<div class="input-group" align="center">
       <button class="button button1" name="reg_user">Register</button>

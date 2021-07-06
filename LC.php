@@ -17,21 +17,11 @@ if(isset($_SESSION['User3'])) {
 <html>
 <head>
   <title>Login</title>
-  <link rel="stylesheet" href="style2.css">
+  <link rel="stylesheet" href="styles/style1.css">
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  <link rel="shortcut icon" href="CvSU/logo.ico">
-<style>
-  body{
-  background-image: url("CvSU/quad.jpg");
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  }
-}
-</style>
-
+  <link rel="shortcut icon" href="styles/CvSU/logo.ico">
 </head>
 <body>
   <div class="header">
