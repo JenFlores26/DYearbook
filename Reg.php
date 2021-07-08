@@ -1,3 +1,5 @@
+//this is a admin-style branch
+
 <?php
     session_start();
 
@@ -39,7 +41,7 @@
   .sidenav a {font-size: 18px;}
 }
   .button {
-  border-radius: 25px;  
+  border-radius: 25px;
   border:none;
   color: white;
   padding: 15px 32px;
@@ -50,7 +52,7 @@
   margin: 4px 2px;
   cursor: pointer;
   color: black;
-  
+
 }
 
 .button1 {background: linear-gradient(to right, yellow, yellow);} /* Green */
@@ -78,4 +80,4 @@
 </div>
 </form>
 </body>
-</html> 
+</html>
