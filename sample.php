@@ -13,9 +13,10 @@
   <title>Administrative Officers</title>
   <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="style3.css">
-<link rel="stylesheet" type="text/css" href="style5.css">
-<link rel="shortcut icon" href="CvSU/logo.ico">
+<link rel="stylesheet" type="text/css" href="styles/style3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="shortcut icon" href="styles/CvSU/logo.ico">
 <style>
   .topnav {
   width: 250%;
@@ -63,14 +64,6 @@
   }
 }
 
-.sidenav {
-  width: 190px;
-  position: fixed;
-  z-index: 1;
-  background: #0275d8;
-  overflow-x: hidden;
-  padding: 8px 0;
-}
 
 .sidenav a {
   padding: 6px 8px 6px 16px;
@@ -112,23 +105,25 @@
 </style>
 </head>
 <body>
-<form action="" method="post">
-<div class="row">
-  <div class="column" style="width:190px;">
-<div id="mySidenav" class="sidenav">
-  <p style="margin-left: 15px;margin-bottom: 0;color:white;"><strong> <?php echo $_SESSION['User2'] ?></strong><br>Admin<br>&nbsp;</p>
-  <a href="#">Message</a>
-  <a href="tab2.php" class="active">Administrative Officers</a>
-  <a href="tab3.php">Academic Affairs</a>
-  <a href="tab8.php">Graduates</a>
-  <a href="tab11.php">Milestones & activities</a>
-  <a href="Reg1.php">Registered Accounts</a>
-  <a href="Reg2.php">Request Accounts</a>
-  <a href="logout2.php">Logout</a>
-</div>
-
-</div>
-
+  <div class="sidenav" id="mySidenav">
+    <header>
+        <div><i class="fas fa-user"></i></div>
+        <div>
+          <h3><?php echo $_SESSION['User2'] ?></h3>
+          <h3>Admin</h3>
+      </div>
+    </header>
+  <ul>
+    <li><a href="sample.php">Message</a></li>
+    <li><a href="tab2.php">Administrative Officers</a></li>
+    <li><a href="tab3.php">Academic Affairs</a></li>
+    <li><a href="tab8.php">Graduates</a></li>
+    <li><a href="tab11.php">Milestones & Activities</a></li>
+    <li><a href="Reg1.php">Registered Accounts</a></li>
+    <li><a href="Reg2.php">Request Accounts</a></li>
+    <li><a href="logout2">logout</a></li>
+  </ul>
+  </div>
 <div class="column">
 <div class="row">
         <?php
@@ -188,7 +183,5 @@ echo "</table>";
 mysqli_close($db);
 ?>
       </div>
-    </div>
-</form>
 </body>
 </html>
