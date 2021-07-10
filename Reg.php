@@ -59,10 +59,12 @@
       ?>
 
       <div class="search-container">
+        <div>
           <input type="text" placeholder="Search.." name="search" value="<?php echo $searchKey; ?>">
-          <button type="button1" style="font-size: 14.5px;background-color:#0275d8;">&#128269;</button>
-          <script type="text/javascript">
-          window.addEventListener('keydown',function(e){
+          <button><i class="fas fa-search"></i></button>
+        </div>
+        <script type="text/javascript">
+         window.addEventListener('keydown',function(e){
             if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){
             if(e.target.nodeName=='INPUT'&&e.target.type=='text'){
             e.preventDefault();return false;}}},true);
@@ -70,26 +72,25 @@
       </div>
 
       <table>
-        <thead>
-          <tr class="red">
-            <th style="width:30px;"><center>Image</center></th>
-            <th style="width:190px;"><center>First Name</center></th>
-            <th style="width:190px;"><center>Middle Initial</center></th>
-            <th style="width:190px;"><center>Last Name</center></th>
-            <th style="width:190px;"><center>Position</center></th>
-            <th style="width:190px;"><center>Year</center></th>
-          </tr>
-        </thead>
-      <tbody>
+        <tbody>
+        <tr>
+            <th>Image</th>
+            <th>First Name</th>
+            <th>Middle Initial</th>
+            <th>Last Name</th>
+            <th>Position</th>
+            <th>Year</th>
+        </tr>
+
         <?php
         while($row = mysqli_fetch_array($result)){
-        echo "<tr style='width: 100%;'>";
-        echo "<td style='width:40px;' align='center'>".'<img class="imahe" style="width:80px; height:100px;" src="data:image/jpeg;base64,'.base64_encode($row['image1'] ).'"/>'."</td>";
-        echo "<td style='width:150px;'>" . $row['fname'] . "</td>";
-        echo "<td style='width:150px;'>" . $row['mname'] . "</td>";
-        echo "<td style='width:150px;'>" . $row['lname'] . "</td>";
-        echo "<td style='width:250px;'>" . $row['position'] . "</td>";
-        echo "<td align='center' style='width:40px;'>" . $row['year'] . "</td>";
+        echo "<tr class='main'>";
+        echo "<td>".'<img class="image-official" src="data:image/jpeg;base64,'.base64_encode($row['image1'] ).'"/>'."</td>";
+        echo "<td>" . $row['fname'] . "</td>";
+        echo "<td>" . $row['mname'] . "</td>";
+        echo "<td>" . $row['lname'] . "</td>";
+        echo "<td>" . $row['position'] . "</td>";
+        echo "<td>" . $row['year'] . "</td>";
         echo "</tr>";
         }
         mysqli_close($db);

@@ -1,4 +1,5 @@
 /*CSS Styles for Admin*/
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:600,700';
 @import url(https://fonts.googleapis.com/css?family=Ubuntu);
 *{
   padding:0;
@@ -42,11 +43,11 @@ i{
 
 }
 .sidenav{
+  margin: 0;
   height: 100vh;
   width: 200px;
   position: fixed;
   background-color:#0275d8;
-  overflow-x: hidden;
   transition: 0.5s;
 }
 
@@ -59,15 +60,81 @@ i{
   transition: 0.3s;
   /*border:1px solid #fff;*/
 }
-
 .sidenav a:hover {
   color: yellow;
   padding-left:30px;
 }
-/* adm-container div */
+/* adm-container div*/
 .adm-container{
-  background-color:red;
   width: 100vw;
   height: 100vh;
+}
+.adm-container > section{
   padding-left:200px;
+}
+/*search-container*/
+.search-container{
+  padding-top:3vh;
+  padding-bottom:3vh;
+  width: 15vw;
+  float: right;
+  margin-right:100px;
+}
+.search-container input{
+  padding-left: 10px;
+  width: 180px;
+  height: 45px;
+  border:none;
+}
+.search-container > div{
+  display: flex;
+}
+button{
+  background-color: #0275d8;
+  border:none;
+  padding:6px;
+  color:white;
+}
+/*table*/
+table{
+  background-color: #fff;
+  margin:auto;
+  overflow: hidden;/*para sa border-radius*/
+  border-radius: 0.5em;
+  width: 75vw;
+  max-width: 100%;
+  font-style: 'Open Sans', sans-serif;
+  border-collapse: collapse; /* to remove all the borderlines */
+}
+tbody{
+  border-radius: 12px;
+}
+th{
+  padding:15px;
+}
+tr{
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+}
+tr:nth-child(odd):not(:first-child){
+   background-color: #ebf3f9;
+}
+tr:first-child{
+  background-color: #0275d8;
+  padding:15px;
+  color:#fff;
+  border-top: none;
+}
+th,td{
+  text-align: left;
+}
+td{
+  width: 7vw;
+  padding-left:15px;
+  padding-top:10px;
+}
+.image-official{
+  width: 80px;
+  height: 100px;
 }
