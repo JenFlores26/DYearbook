@@ -31,15 +31,21 @@
       </div>
     </header>
   <ul>
-    <li><a href="#adm-message">Message</a></li>
-    <li><a href="#adm-ao">Administrative Officers</a></li>
-    <li><a href="tab3.php">Academic Affairs</a></li>
-    <li><a href="tab8.php">Graduates</a></li>
-    <li><a href="tab11.php">Milestones & Activities</a></li>
-    <li><a href="Reg1.php">Registered Accounts</a></li>
-    <li><a href="Reg2.php">Request Accounts</a></li>
+    <li class="active"><a href="#adm-message">Message</a></li>
+    <li class="active"><a href="#adm-ao">Administrative Officers</a></li>
+    <li class="active"><a href="tab3.php">Academic Affairs</a></li>
+    <li class="active"><a href="tab8.php">Graduates</a></li>
+    <li class="active"><a href="tab11.php">Milestones & Activities</a></li>
+    <li class="active"><a href="Reg1.php">Registered Accounts</a></li>
+    <li class="active"><a href="Reg2.php">Request Accounts</a></li>
     <li><a href="logout2">logout</a></li>
   </ul>
+  <script src="https://code/jquery.com/jquery-3.3.1.js"></script>
+  <script type="text/javascript">
+    $(document).on('click','ul li',function(){
+      $this.addClass('active').siblings().removeClass('active')
+    }));
+  </script>
   </div>
 
   <div class="adm-container">
@@ -60,9 +66,10 @@
 
       <div class="search-container">
         <div>
-          <input type="text" placeholder="Search.." name="search" value="<?php echo $searchKey; ?>">
-          <button><i class="fas fa-search"></i></button>
+            <input type="text" placeholder="Search.." name="search" value="<?php echo $searchKey; ?>">
+            <button type="submit"><i class="fas fa-search"></i></button>
         </div>
+        </form>
         <script type="text/javascript">
          window.addEventListener('keydown',function(e){
             if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){
@@ -98,7 +105,60 @@
       </table>
     </section>
     <section id="adm-ao">
+      <?php
+      //just add form tag here to use the search function
+      $db = mysqli_connect('localhost', 'root', '', 'yearbook');
 
+      if(isset($_POST['search'])){
+      $searchKey=$_POST['search'];
+      $sql = "SELECT * from tab2 where lname LIKE '%$searchKey%' or fname LIKE '%$searchKey%' or mname LIKE '%$searchKey%' ORDER BY lname, year";
+      $result = mysqli_query($db,$sql);
+      }else{
+      $sql = "SELECT * from tab2 ORDER BY lname, year";
+      $searchKey="";
+      }
+      $result = mysqli_query($db,$sql);
+      ?>
+
+      <div class="search-container">
+        <div>
+            <input type="text" placeholder="Search.." name="search" value="<?php echo $searchKey; ?>">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        </form>
+        <script type="text/javascript">
+         window.addEventListener('keydown',function(e){
+            if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){
+            if(e.target.nodeName=='INPUT'&&e.target.type=='text'){
+            e.preventDefault();return false;}}},true);
+          </script>
+      </div>
+
+      <table>
+        <tbody>
+        <tr>
+            <th>Image</th>
+            <th>First Name</th>
+            <th>Middle Initial</th>
+            <th>Last Name</th>
+            <th>Position</th>
+            <th>Year</th>
+        </tr>
+
+        <?php
+        while($row = mysqli_fetch_array($result)){
+        echo "<tr class='main'>";
+        echo "<td>".'<img class="image-official" src="data:image/jpeg;base64,'.base64_encode($row['image1'] ).'"/>'."</td>";
+        echo "<td>" . $row['fname'] . "</td>";
+        echo "<td>" . $row['mname'] . "</td>";
+        echo "<td>" . $row['lname'] . "</td>";
+        echo "<td>" . $row['position'] . "</td>";
+        echo "<td>" . $row['year'] . "</td>";
+        echo "</tr>";
+        }
+        mysqli_close($db);
+        ?>
+      </table>
     </section>
   </div>
 </body>

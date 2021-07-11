@@ -64,6 +64,9 @@ i{
   color: yellow;
   padding-left:30px;
 }
+li.active{
+  background: #262626;
+}
 /* adm-container div*/
 .adm-container{
   width: 100vw;
