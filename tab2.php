@@ -59,7 +59,7 @@
     float: right;
   }
   .topnav input[type=text] {
-    border: 1px solid #ccc;
+    border: 1px solid #ccc;  
   }
 }
 
@@ -92,7 +92,7 @@
   .sidenav a {font-size: 18px;}
 }
   .button {
-  border-radius: 25px;
+  border-radius: 25px;  
   border:none;
   color: white;
   padding: 10px 22px;
@@ -103,7 +103,7 @@
   margin: 4px 2px;
   cursor: pointer;
   color: black;
-
+  
 }
 .button1 {background: linear-gradient(to right, lightblue, lightblue);}
 .button2 {background: linear-gradient(to right, green, green);} /* Green */
@@ -131,9 +131,9 @@
 
 <div class="column">
 <div class="row">
-        <?php
+        <?php 
         $db = mysqli_connect('localhost', 'root', '', 'yearbook');
-
+        
         if(isset($_POST['search'])){
         $searchKey=$_POST['search'];
         $sql = "SELECT * from tab2 where lname LIKE '%$searchKey%' or fname LIKE '%$searchKey%' or mname LIKE '%$searchKey%' ORDER BY lname, year";
@@ -173,7 +173,7 @@ window.addEventListener('keydown',function(e){
           </tr>
         </thead>
         <tbody>
-          <?php while($row = mysqli_fetch_array($result)){
+          <?php while($row = mysqli_fetch_array($result)){ 
           echo "<tr style='width: 100%;'>";
           echo "<td style='width:40px;' align='center'>".'<img class="imahe" style="width:80px; height:100px;" src="data:image/jpeg;base64,'.base64_encode($row['image1'] ).'"/>'."</td>";
           echo "<td style='width:150px;'>" . $row['fname'] . "</td>";
@@ -191,4 +191,4 @@ mysqli_close($db);
     </div>
 </form>
 </body>
-</html>
+</html> 

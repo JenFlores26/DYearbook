@@ -1,5 +1,3 @@
-<!--this is a admin-style branch-->
-
 <?php
     session_start();
 
@@ -14,92 +12,70 @@
 <html>
 <head>
   <title>Admin Dashboard</title>
+  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="styles/sample.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" type="text/css" href="style3.css">
+<link rel="shortcut icon" href="CvSU/logo.ico">
+<style>
+.sidenav {
+  width: 190px;
+  position: fixed;
+  z-index: 1;
+  background: #0275d8;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
 
-</script>
-<link rel="shortcut icon" href="styles/CvSU/logo.ico">
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: white;
+  display: block;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+  .button {
+  border-radius: 25px;  
+  border:none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  color: black;
+  
+}
+
+.button1 {background: linear-gradient(to right, yellow, yellow);} /* Green */
+.button2 {background: linear-gradient(to right, #9C27B0, #E040FB);} /* Blue */
+}
+</style>
 </head>
 <body>
-  <div class="sidenav" id="mySidenav">
-    <header>
-        <div><i class="fas fa-user"></i></div>
-        <div>
-          <h3><?php echo $_SESSION['User2'] ?></h3>
-          <h3>Admin</h3>
-      </div>
-    </header>
-  <ul>
-    <li><a href="#adm-message">Message</a></li>
-    <li><a href="#adm-ao">Administrative Officers</a></li>
-    <li><a href="tab3.php">Academic Affairs</a></li>
-    <li><a href="tab8.php">Graduates</a></li>
-    <li><a href="tab11.php">Milestones & Activities</a></li>
-    <li><a href="Reg1.php">Registered Accounts</a></li>
-    <li><a href="Reg2.php">Request Accounts</a></li>
-    <li><a href="logout2">logout</a></li>
-  </ul>
-  </div>
+<form action="scripts.php" method="post">
+<div class="row">
+  <div class="column" style="width:190px;">
+<div id="mySidenav" class="sidenav">
+  <p style="margin-left: 15px;margin-bottom: 0;color:white;">ID: <strong> <?php echo $_SESSION['User2'] ?></strong><br>Admin<br><strong><?php echo $_SESSION['Users2'] ?></strong><br></p>
+  <a href="#">Message</a>
+  <a href="tab2.php">Administrative Officers</a>
+  <a href="tab3.php">Academic Affairs</a>
+  <a href="tab8.php">Graduates</a>
+  <a href="tab11.php">Milestones & activities</a>
+  <a href="Reg1.php">Registered Accounts</a>
+  <a href="Reg2.php">Request Accounts</a>
+  <a href="logout2.php">Logout</a>
+</div>
 
-  <div class="adm-container">
-    <section class="adm-message" id="adm-message">
-      <?php
-      $db = mysqli_connect('localhost', 'root', '', 'yearbook');
-
-      if(isset($_POST['search'])){
-      $searchKey=$_POST['search'];
-      $sql = "SELECT * from tab2 where lname LIKE '%$searchKey%' or fname LIKE '%$searchKey%' or mname LIKE '%$searchKey%' ORDER BY lname, year";
-      $result = mysqli_query($db,$sql);
-      }else{
-      $sql = "SELECT * from tab2 ORDER BY lname, year";
-      $searchKey="";
-      }
-      $result = mysqli_query($db,$sql);
-      ?>
-
-      <div class="search-container">
-        <div>
-          <input type="text" placeholder="Search.." name="search" value="<?php echo $searchKey; ?>">
-          <button><i class="fas fa-search"></i></button>
-        </div>
-        <script type="text/javascript">
-         window.addEventListener('keydown',function(e){
-            if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){
-            if(e.target.nodeName=='INPUT'&&e.target.type=='text'){
-            e.preventDefault();return false;}}},true);
-          </script>
-      </div>
-
-      <table>
-        <tbody>
-        <tr>
-            <th>Image</th>
-            <th>First Name</th>
-            <th>Middle Initial</th>
-            <th>Last Name</th>
-            <th>Position</th>
-            <th>Year</th>
-        </tr>
-
-        <?php
-        while($row = mysqli_fetch_array($result)){
-        echo "<tr class='main'>";
-        echo "<td>".'<img class="image-official" src="data:image/jpeg;base64,'.base64_encode($row['image1'] ).'"/>'."</td>";
-        echo "<td>" . $row['fname'] . "</td>";
-        echo "<td>" . $row['mname'] . "</td>";
-        echo "<td>" . $row['lname'] . "</td>";
-        echo "<td>" . $row['position'] . "</td>";
-        echo "<td>" . $row['year'] . "</td>";
-        echo "</tr>";
-        }
-        mysqli_close($db);
-        ?>
-      </table>
-    </section>
-    <section id="adm-ao">
-
-    </section>
-  </div>
+</div>
+</div>
+</form>
 </body>
-</html>
+</html> 
