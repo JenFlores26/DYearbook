@@ -15,8 +15,10 @@
 <head>
   <title>Admin Dashboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="styles/sample.css">
+<link rel="stylesheet" href="styles/sample.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!--<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>-->
+
 
 </script>
 <link rel="shortcut icon" href="styles/CvSU/logo.ico">
@@ -31,21 +33,15 @@
       </div>
     </header>
   <ul>
-    <li class="active"><a href="#adm-message">Message</a></li>
-    <li class="active"><a href="#adm-ao">Administrative Officers</a></li>
-    <li class="active"><a href="tab3.php">Academic Affairs</a></li>
-    <li class="active"><a href="tab8.php">Graduates</a></li>
-    <li class="active"><a href="tab11.php">Milestones & Activities</a></li>
-    <li class="active"><a href="Reg1.php">Registered Accounts</a></li>
-    <li class="active"><a href="Reg2.php">Request Accounts</a></li>
+    <li><a href="#adm-message">Message</a></li>
+    <li><a href="#adm-ao">Administrative Officers</a></li>
+    <li><a href="tab3.php">Academic Affairs</a></li>
+    <li><a href="tab8.php">Graduates</a></li>
+    <li><a href="tab11.php">Milestones & Activities</a></li>
+    <li><a href="Reg1.php">Registered Accounts</a></li>
+    <li><a href="Reg2.php">Request Accounts</a></li>
     <li><a href="logout2">logout</a></li>
   </ul>
-  <script src="https://code/jquery.com/jquery-3.3.1.js"></script>
-  <script type="text/javascript">
-    $(document).on('click','ul li',function(){
-      $this.addClass('active').siblings().removeClass('active')
-    }));
-  </script>
   </div>
 
   <div class="adm-container">
@@ -162,4 +158,11 @@
     </section>
   </div>
 </body>
+<script src="styles/js/jquery-3.6.0.js"></script>
+<script>
+  $('.adm-container').hide();
+  /*$(document).on('click','ul li',function(){
+    $this.addClass('active').siblings().removeClass('active')
+  }));*/
+</script>
 </html>
