@@ -30,13 +30,13 @@
       </div>
     </header>
   <ul class="nav">
-    <li><a class="active" href="#adm-message">Message</a></li>
-    <li><a class="active" href="#adm-ao">Administrative Officers</a></li>
+    <li><a class="active admin-m" href="#adm-message">Message</a></li>
+    <li><a class="active admin-ao" href="#adm-ao">Administrative Officers</a></li>
     <li><a class="active"href="#adm-affairs">Academic Affairs</a></li>
     <li><a class="active"href="#gradutes">Graduates</a></li>
     <li><a class="active"href="#adm-milestones-activities">Milestones & Activities</a></li>
-    <li><a class="active" href="Reg1.php">Registered Accounts</a></li>
-    <li><a class="active"href="Reg2.php">Request Accounts</a></li>
+    <li><a class="active" href="#adm-reg-accounts">Registered Accounts</a></li>
+    <li><a class="active"href="#adm-req-accounts">Request Accounts</a></li>
     <li><a href="logout2.php">logout</a></li>
   </ul>
   </div>
@@ -45,7 +45,7 @@
     <section class="adm-message" id="adm-message">
 
     </section>
-    <section id="adm-ao">
+    <section class="admin-ao" id="adm-ao">
       <?php
       //just add form tag here to use the search function
       $db = mysqli_connect('localhost', 'root', '', 'yearbook');
@@ -157,17 +157,17 @@
         ?>
       </table>
     </section>
-    <section id="#gradutes">
+    <section id="gradutes">
       <?php
       //just add form tag here to use the search function
       $db = mysqli_connect('localhost', 'root', '', 'yearbook');
 
       if(isset($_POST['search'])){
       $searchKey=$_POST['search'];
-      $sql = "SELECT * from tab8 where lname LIKE '%$searchKey%' or fname LIKE '%$searchKey%' or mname LIKE '%$searchKey%' ORDER BY lname, year";
+      $sql = "SELECT * from shs where lname LIKE '%$searchKey%' or fname LIKE '%$searchKey%' or mname LIKE '%$searchKey%' ORDER BY lname, year";
       $result = mysqli_query($db,$sql);
       }else{
-      $sql = "SELECT * from tab8 ORDER BY lname, year";
+      $sql = "SELECT * from shs ORDER BY lname, year";
       $searchKey="";
       }
       $result = mysqli_query($db,$sql);
@@ -195,12 +195,183 @@
             <th>Middle Initial</th>
             <th>Last Name</th>
             <th>Year</th>
+        </tr>
+
+        <?php
+        while($row = mysqli_fetch_array($result)){
+          echo "<tr class='main'>";
+          echo "<td>".'<img class="image-official" src="data:image/jpeg;base64,'.base64_encode($row['image'] ).'"/>'."</td>";
+          echo "<td>" . $row['fname'] . "</td>";
+          echo "<td>" . $row['mname'] . "</td>";
+          echo "<td>" . $row['lname'] . "</td>";
+          echo "<td>" . $row['year'] . "</td>";
+          echo "</tr>";
+        }
+        mysqli_close($db);
+        ?>
+      </table>
+    </section>
+    <section id="adm-milestones-activities">
+      <?php
+      //just add form tag here to use the search function
+      $db = mysqli_connect('localhost', 'root', '', 'yearbook');
+
+      if(isset($_POST['search'])){
+      $searchKey=$_POST['search'];
+      $sql = "SELECT * from tab11";
+      $result = mysqli_query($db,$sql);
+      }else{
+      $sql = "SELECT * from tab11";
+      $searchKey="";
+      }
+      $result = mysqli_query($db,$sql);
+      ?>
+
+      <div class="search-container">
+        <div>
+            <input type="text" placeholder="Search.." name="search" value="<?php echo $searchKey; ?>">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        </form>
+        <script type="text/javascript">
+         window.addEventListener('keydown',function(e){
+            if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){
+            if(e.target.nodeName=='INPUT'&&e.target.type=='text'){
+            e.preventDefault();return false;}}},true);
+          </script>
+      </div>
+
+      <table>
+        <tbody>
+        <tr>
+            <th>Image</th>
+            <th>Year</th>
+        </tr>
+
+        <?php
+        while($row = mysqli_fetch_array($result)){
+          echo "<tr class='main'>";
+          echo "<td>".'<img class="image-official" src="data:image/jpeg;base64,'.base64_encode($row['image1'] ).'"/>'."</td>";
+          echo "<td>" . $row['year'] . "</td>";
+          echo "</tr>";
+        }
+        mysqli_close($db);
+        ?>
+      </table>
+    </section>
+    <section id="adm-reg-accounts">
+      <?php
+      //just add form tag here to use the search function
+      $db = mysqli_connect('localhost', 'root', '', 'yearbook');
+      $sql = "SELECT * from confirmed WHERE usertype='Student'";
+      $result = mysqli_query($db,$sql);
+      ?>
+
+      <div class="search-container">
+        <div>
+            <input type="text" placeholder="Search.." name="search" value="<?php echo $searchKey; ?>">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        </form>
+        <script type="text/javascript">
+         window.addEventListener('keydown',function(e){
+            if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){
+            if(e.target.nodeName=='INPUT'&&e.target.type=='text'){
+            e.preventDefault();return false;}}},true);
+          </script>
+      </div>
+
+      <table>
+        <tbody>
+        <tr>
+            <th>School ID</th>
+            <th>Email</th>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Batch Year</th>
+            <th>Contact No.</th>
             <th>Action</th>
         </tr>
 
         <?php
         while($row = mysqli_fetch_array($result)){
+          echo "<tr class='main'>";
+          echo "<td>" . $row['id'] . "</td>";
+          echo "<td>" . $row['email'] . "</td>";
+          echo "<td>" . $row['fname'] . "</td>";
+          echo "<td>" . $row['mname'] . "</td>";
+          echo "<td>" . $row['lname'] . "</td>";
+          echo "<td>" . $row['year'] . "</td>";
+          echo "<td>" . $row['Contact'] . "</td>";
+          echo "<td align='center'>
+                  <button class='button2' style='border:1px solid;width:30px;'>
+                <a class='delbtn' style='text-decoration:none; color:white;' href ='registarFunction.php?edit=".$row['id']."'>&#9998;</a>
+                  </button>
+                  <button class='button3' style='border:1px solid;width:30px;'>
+                <a class='delbtn' style='text-decoration:none; color:white;' href='registarFunction.php?email=".$row['email']."'>&#128465;</a>
+                  </button>
+                </td>";
+          echo "</tr>";
+        }
+        mysqli_close($db);
+        ?>
+      </table>
+    </section>
+    <section id="adm-req-accounts">
+      <?php
+      //just add form tag here to use the search function
+      $db = mysqli_connect('localhost', 'root', '', 'yearbook');
+      $sql = "SELECT * from confirm";
+      $result = mysqli_query($db,$sql);
+      ?>
 
+      <div class="search-container">
+        <div>
+            <input type="text" placeholder="Search.." name="search" value="<?php echo $searchKey; ?>">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        </form>
+        <script type="text/javascript">
+         window.addEventListener('keydown',function(e){
+            if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){
+            if(e.target.nodeName=='INPUT'&&e.target.type=='text'){
+            e.preventDefault();return false;}}},true);
+          </script>
+      </div>
+
+      <table>
+        <tbody>
+        <tr>
+            <th>School ID</th>
+            <th>Email</th>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Batch Year</th>
+            <th>Contact No.</th>
+            <th>Action</th>
+        </tr>
+
+        <?php
+        while($row = mysqli_fetch_array($result)){
+          echo "<tr class='main'>";
+          echo "<td>" . $row['id'] . "</td>";
+          echo "<td>" . $row['email'] . "</td>";
+          echo "<td>" . $row['fname'] . "</td>";
+          echo "<td>" . $row['mname'] . "</td>";
+          echo "<td>" . $row['lname'] . "</td>";
+          echo "<td>" . $row['year'] . "</td>";
+          echo "<td>" . $row['Contact'] . "</td>";
+          echo "<td align='center'>
+                  <button class='button2' style='border:1px solid;width:30px;'>
+                <a class='delbtn' style='text-decoration:none; color:white;' href ='registarFunction.php?edit=".$row['id']."'>&#9998;</a>
+                  </button>
+                  <button class='button3' style='border:1px solid;width:30px;'>
+                <a class='delbtn' style='text-decoration:none; color:white;' href='registarFunction.php?email=".$row['email']."'>&#128465;</a>
+                  </button>
+                </td>";
+          echo "</tr>";
         }
         mysqli_close($db);
         ?>
