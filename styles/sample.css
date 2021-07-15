@@ -64,6 +64,9 @@ i{
   color: yellow;
   padding-left:30px;
 }
+li.active{ /*active jquery sidenav link*/
+  background: #020cbd;
+}
 /* adm-container div*/
 .adm-container{
   width: 100vw;

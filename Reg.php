@@ -32,21 +32,25 @@
           <h3>Admin</h3>
       </div>
     </header>
-  <ul>
-    <li><a href="#adm-message">Message</a></li>
-    <li><a href="#adm-ao">Administrative Officers</a></li>
-    <li><a href="tab3.php">Academic Affairs</a></li>
-    <li><a href="tab8.php">Graduates</a></li>
-    <li><a href="tab11.php">Milestones & Activities</a></li>
-    <li><a href="Reg1.php">Registered Accounts</a></li>
-    <li><a href="Reg2.php">Request Accounts</a></li>
-    <li><a href="logout2">logout</a></li>
+  <ul class="nav">
+    <li><a class="active" href="#adm-message">Message</a></li>
+    <li><a class="active" href="#adm-ao">Administrative Officers</a></li>
+    <li><a class="active"href="tab3.php">Academic Affairs</a></li>
+    <li><a class="active"href="tab8.php">Graduates</a></li>
+    <li><a class="active"href="tab11.php">Milestones & Activities</a></li>
+    <li><a class="active" href="Reg1.php">Registered Accounts</a></li>
+    <li><a class="active"href="Reg2.php">Request Accounts</a></li>
+    <li><a href="logout2.php">logout</a></li>
   </ul>
   </div>
 
   <div class="adm-container">
     <section class="adm-message" id="adm-message">
+
+    </section>
+    <section id="adm-ao">
       <?php
+      //just add form tag here to use the search function
       $db = mysqli_connect('localhost', 'root', '', 'yearbook');
 
       if(isset($_POST['search'])){
@@ -107,7 +111,7 @@
 
       if(isset($_POST['search'])){
       $searchKey=$_POST['search'];
-      $sql = "SELECT * from tab2 where lname LIKE '%$searchKey%' or fname LIKE '%$searchKey%' or mname LIKE '%$searchKey%' ORDER BY lname, year";
+      $sql = "SELECT * from tab3 where lname LIKE '%$searchKey%' or fname LIKE '%$searchKey%' or mname LIKE '%$searchKey%' ORDER BY lname, year";
       $result = mysqli_query($db,$sql);
       }else{
       $sql = "SELECT * from tab2 ORDER BY lname, year";
@@ -160,9 +164,13 @@
 </body>
 <script src="styles/js/jquery-3.6.0.js"></script>
 <script>
-  $('.adm-container').hide();
-  /*$(document).on('click','ul li',function(){
+  //$('.adm-container').hide();
+  /*$('.sidenav').on('click','ul li',function(){
     $this.addClass('active').siblings().removeClass('active')
   }));*/
+  $("ul").on('click','li', function(){
+    $("ul li.active").removeClass("active");
+    $(this).addClass('active');
+  })
 </script>
 </html>
