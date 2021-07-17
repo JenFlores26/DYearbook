@@ -75,6 +75,9 @@ li.active{ /*active jquery sidenav link*/
 .adm-container > section{
   padding-left:200px;
 }
+section{
+  display: none;
+}
 /*search-container*/
 .search-container{
   padding-top:3vh;

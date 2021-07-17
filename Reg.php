@@ -101,7 +101,7 @@
         ?>
       </table>
     </section>
-    <section id="adm-affairs">
+    <section class="admin-aa" id="adm-affairs">
       <?php
       //just add form tag here to use the search function
       $db = mysqli_connect('localhost', 'root', '', 'yearbook');
@@ -157,7 +157,7 @@
         ?>
       </table>
     </section>
-    <section id="gradutes">
+    <section class="admin-g" id="gradutes">
       <?php
       //just add form tag here to use the search function
       $db = mysqli_connect('localhost', 'root', '', 'yearbook');
@@ -211,7 +211,7 @@
         ?>
       </table>
     </section>
-    <section id="adm-milestones-activities">
+    <section class="admin-ma"id="adm-milestones-activities">
       <?php
       //just add form tag here to use the search function
       $db = mysqli_connect('localhost', 'root', '', 'yearbook');
@@ -259,7 +259,7 @@
         ?>
       </table>
     </section>
-    <section id="adm-reg-accounts">
+    <section class="admin-rega" id="adm-reg-accounts">
       <?php
       //just add form tag here to use the search function
       $db = mysqli_connect('localhost', 'root', '', 'yearbook');
@@ -318,7 +318,7 @@
         ?>
       </table>
     </section>
-    <section id="adm-req-accounts">
+    <section class="admin-reqa" id="adm-req-accounts">
       <?php
       //just add form tag here to use the search function
       $db = mysqli_connect('localhost', 'root', '', 'yearbook');
@@ -382,12 +382,63 @@
 <script src="styles/js/jquery-3.6.0.js"></script>
 <script>
   //$('.adm-container').hide();
-  /*$('.sidenav').on('click','ul li',function(){
+  /*$('.sidenav').on('click','ul li',function functionName() {
+
+  }ction(){
     $this.addClass('active').siblings().removeClass('active')
   }));*/
   $("ul").on('click','li', function(){
     $("ul li.active").removeClass("active");
     $(this).addClass('active');
   })
+  $("li:nth-child(2)").click(function(){
+    $("section.admin-ao").css('display','inline-block');
+    $("section.admin-aa").css('display','none');
+    $("section.admin-g").css('display','none');
+    $("section.admin-ma").css('display','none');
+    $("section.admin-rega").css('display','none');
+    $("section.admin-reqa").css('display','none');
+  })
+  $("li:nth-child(3)").click(function(){
+    $("section.admin-ao").css('display','none');
+    $("section.admin-aa").css('display','inline-block');
+    $("section.admin-g").css('display','none');
+    $("section.admin-ma").css('display','none');
+    $("section.admin-rega").css('display','none');
+    $("section.admin-reqa").css('display','none');
+  })
+  $("li:nth-child(4)").click(function(){
+    $("section.admin-ao").css('display','none');
+    $("section.admin-aa").css('display','none');
+    $("section.admin-g").css('display','inline-block');
+    $("section.admin-ma").css('display','none');
+    $("section.admin-rega").css('display','none');
+    $("section.admin-reqa").css('display','none');
+  })
+  $("li:nth-child(5)").click(function(){
+    $("section.admin-ao").css('display','none');
+    $("section.admin-aa").css('display','none');
+    $("section.admin-g").css('display','none');
+    $("section.admin-ma").css('display','inline-block');
+    $("section.admin-rega").css('display','none');
+    $("section.admin-reqa").css('display','none');
+  })
+  $("li:nth-child(6)").click(function(){
+    $("section.admin-ao").css('display','none');
+    $("section.admin-aa").css('display','none');
+    $("section.admin-g").css('display','none');
+    $("section.admin-ma").css('display','none');
+    $("section.admin-rega").css('display','inline-block');
+    $("section.admin-reqa").css('display','none');
+  })
+  $("li:nth-child(7)").click(function(){
+    $("section.admin-ao").css('display','none');
+    $("section.admin-aa").css('display','none');
+    $("section.admin-g").css('display','none');
+    $("section.admin-ma").css('display','none');
+    $("section.admin-rega").css('display','none');
+    $("section.admin-reqa").css('display','inline-block');
+  })
+
 </script>
 </html>
