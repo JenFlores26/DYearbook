@@ -42,10 +42,10 @@
   </div>
 
   <div class="adm-container">
-    <section class="adm-message" id="adm-message">
+    <section class="adm-section" id="adm-message">
 
     </section>
-    <section class="admin-ao" id="adm-ao">
+    <section class="adm-section" id="adm-ao">
       <?php
       //just add form tag here to use the search function
       $db = mysqli_connect('localhost', 'root', '', 'yearbook');
@@ -101,7 +101,7 @@
         ?>
       </table>
     </section>
-    <section class="admin-aa" id="adm-affairs">
+    <section class="adm-section" id="adm-affairs">
       <?php
       //just add form tag here to use the search function
       $db = mysqli_connect('localhost', 'root', '', 'yearbook');
@@ -157,7 +157,7 @@
         ?>
       </table>
     </section>
-    <section class="admin-g" id="gradutes">
+    <section class="adm-section" id="gradutes">
       <?php
       //just add form tag here to use the search function
       $db = mysqli_connect('localhost', 'root', '', 'yearbook');
@@ -211,7 +211,7 @@
         ?>
       </table>
     </section>
-    <section class="admin-ma"id="adm-milestones-activities">
+    <section class="adm-section" id="adm-milestones-activities">
       <?php
       //just add form tag here to use the search function
       $db = mysqli_connect('localhost', 'root', '', 'yearbook');
@@ -259,7 +259,7 @@
         ?>
       </table>
     </section>
-    <section class="admin-rega" id="adm-reg-accounts">
+    <section class="adm-section" id="adm-reg-accounts">
       <?php
       //just add form tag here to use the search function
       $db = mysqli_connect('localhost', 'root', '', 'yearbook');
@@ -318,7 +318,7 @@
         ?>
       </table>
     </section>
-    <section class="admin-reqa" id="adm-req-accounts">
+    <section class="adm-section" id="adm-req-accounts">
       <?php
       //just add form tag here to use the search function
       $db = mysqli_connect('localhost', 'root', '', 'yearbook');
@@ -378,67 +378,7 @@
       </table>
     </section>
   </div>
+  <script src="styles/js/jquery-3.6.0.js"></script>
+  <script src="styles/js/admin.js"></script>
 </body>
-<script src="styles/js/jquery-3.6.0.js"></script>
-<script>
-  //$('.adm-container').hide();
-  /*$('.sidenav').on('click','ul li',function functionName() {
-
-  }ction(){
-    $this.addClass('active').siblings().removeClass('active')
-  }));*/
-  $("ul").on('click','li', function(){
-    $("ul li.active").removeClass("active");
-    $(this).addClass('active');
-  })
-  $("li:nth-child(2)").click(function(){
-    $("section.admin-ao").css('display','inline-block');
-    $("section.admin-aa").css('display','none');
-    $("section.admin-g").css('display','none');
-    $("section.admin-ma").css('display','none');
-    $("section.admin-rega").css('display','none');
-    $("section.admin-reqa").css('display','none');
-  })
-  $("li:nth-child(3)").click(function(){
-    $("section.admin-ao").css('display','none');
-    $("section.admin-aa").css('display','inline-block');
-    $("section.admin-g").css('display','none');
-    $("section.admin-ma").css('display','none');
-    $("section.admin-rega").css('display','none');
-    $("section.admin-reqa").css('display','none');
-  })
-  $("li:nth-child(4)").click(function(){
-    $("section.admin-ao").css('display','none');
-    $("section.admin-aa").css('display','none');
-    $("section.admin-g").css('display','inline-block');
-    $("section.admin-ma").css('display','none');
-    $("section.admin-rega").css('display','none');
-    $("section.admin-reqa").css('display','none');
-  })
-  $("li:nth-child(5)").click(function(){
-    $("section.admin-ao").css('display','none');
-    $("section.admin-aa").css('display','none');
-    $("section.admin-g").css('display','none');
-    $("section.admin-ma").css('display','inline-block');
-    $("section.admin-rega").css('display','none');
-    $("section.admin-reqa").css('display','none');
-  })
-  $("li:nth-child(6)").click(function(){
-    $("section.admin-ao").css('display','none');
-    $("section.admin-aa").css('display','none');
-    $("section.admin-g").css('display','none');
-    $("section.admin-ma").css('display','none');
-    $("section.admin-rega").css('display','inline-block');
-    $("section.admin-reqa").css('display','none');
-  })
-  $("li:nth-child(7)").click(function(){
-    $("section.admin-ao").css('display','none');
-    $("section.admin-aa").css('display','none');
-    $("section.admin-g").css('display','none');
-    $("section.admin-ma").css('display','none');
-    $("section.admin-rega").css('display','none');
-    $("section.admin-reqa").css('display','inline-block');
-  })
-
-</script>
 </html>
