@@ -1,3 +1,4 @@
+<!--this is admin-style branch-->
 <?php
     session_start();
 
@@ -10,55 +11,111 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Dashboard - Registrar</title>
-  <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="style3.css">
-<link rel="shortcut icon" href="CvSU/logo.ico">
-<style>
-.sidenav {
-  width: 190px;
-  position: fixed;
-  z-index: 1;
-  background: #0275d8;
-  overflow-x: hidden;
-  padding: 8px 0;
-}
-
-.sidenav a {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 15px;
-  color: white;
-  display: block;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
-  .button {
-  border-radius: 25px;  
-  border:none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  color: black;
-  
-}
-
-.button1 {background: linear-gradient(to right, yellow, yellow);} /* Green */
-.button2 {background: linear-gradient(to right, #9C27B0, #E040FB);} /* Blue */
-}
-</style>
+  <title>Registrar Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="styles/style4.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="shortcut icon" href="styles/CvSU/logo.ico">
 </head>
 <body>
-<form action="scripts.php" method="post">
+  <div class="sidenav" id="mySidenav">
+    <header>
+      <div><i class="fas fa-user"></i></div>
+      <div>
+        <h3><?php echo $_SESSION['User'] ?></h3>
+        <h3>Registrar</h3>
+      </div>
+    </header>
+    <ul class="nav">
+      <li><a class="active admin-m" href="#reg-message">Message</a></li>
+      <li><a class="active admin-ao" href="#reg-ao">Administrative Officers</a></li>
+      <li><a class="active"href="#reg-affairs">Academic Affairs</a></li>
+      <li><a class="active"href="#gradutes">Graduates</a></li>
+      <li><a class="active"href="#reg-milestones-activities">Milestones & Activities</a></li>
+      <li><a href="logout2.php">logout</a></li>
+    </ul>
+  </div>
+  <div class="reg-container">
+    <section class="reg-m" id="reg-message">
+
+    </section>
+    <section class="reg-ao" id="reg-ao">
+      <?php
+      //just add form tag here to use the search function
+      $db = mysqli_connect('localhost', 'root', '', 'yearbook');
+
+      if(isset($_POST['search'])){
+      $searchKey=$_POST['search'];
+      $sql = "SELECT * from tab2 where lname LIKE '%$searchKey%' or fname LIKE '%$searchKey%' or mname LIKE '%$searchKey%' ORDER BY lname, year";
+      $result = mysqli_query($db,$sql);
+      }else{
+      $sql = "SELECT * from tab2 ORDER BY lname, year";
+      $searchKey="";
+      }
+      $result = mysqli_query($db,$sql);
+      ?>
+
+      <div class="search-container">
+        <div>
+            <input type="text" placeholder="Search.." name="search" value="<?php echo $searchKey; ?>">
+            <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+        </form>
+        <script type="text/javascript">
+         window.addEventListener('keydown',function(e){
+            if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){
+            if(e.target.nodeName=='INPUT'&&e.target.type=='text'){
+            e.preventDefault();return false;}}},true);
+          </script>
+      </div>
+
+      <table>
+        <tbody>
+        <tr>
+            <th>Image</th>
+            <th>First Name</th>
+            <th>Middle Initial</th>
+            <th>Last Name</th>
+            <th>Position</th>
+            <th>Year</th>
+            <th>Action</th>
+        </tr>
+
+        <?php
+        while($row = mysqli_fetch_array($result)){
+        echo "<tr class='main'>";
+        echo "<td>".'<img class="image-official" src="data:image/jpeg;base64,'.base64_encode($row['image1'] ).'"/>'."</td>";
+        echo "<td>" . $row['fname'] . "</td>";
+        echo "<td>" . $row['mname'] . "</td>";
+        echo "<td>" . $row['lname'] . "</td>";
+        echo "<td>" . $row['position'] . "</td>";
+        echo "<td>" . $row['year'] . "</td>";
+        //Action button
+        echo "<td>
+                  <button class='button2'>
+                    <a href ='registarFunctions.php?edit2=".$row['id']."'>&#9998;</a>
+                  </button>
+                  <button class='button3'>
+                <a class='delbtn'  href='registarFunctions.php?email2=".$row['fname']."'>&#128465;</a>
+                  </button>
+                  </td>";
+        echo "</tr>";
+        }
+        mysqli_close($db);
+        ?>
+      </table>
+    </section>
+    <section id="reg-affairs">
+
+    </section>
+    <section id="graduates">
+
+    </section>
+    <section id="reg-milestones-activities">
+
+    </section>
+  </div>
+<!--<form action="scripts.php" method="post">
 <div class="row">
   <div class="column" style="width:190px;">
 <div id="mySidenav" class="sidenav">
@@ -73,6 +130,6 @@
 
 </div>
 </div>
-</form>
+</form>-->
 </body>
-</html> 
+</html>
