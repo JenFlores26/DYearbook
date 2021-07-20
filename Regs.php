@@ -27,19 +27,19 @@
       </div>
     </header>
     <ul class="nav">
-      <li><a class="active admin-m" href="#reg-message">Message</a></li>
-      <li><a class="active admin-ao" href="#reg-ao">Administrative Officers</a></li>
-      <li><a class="active"href="#reg-affairs">Academic Affairs</a></li>
-      <li><a class="active"href="#gradutes">Graduates</a></li>
-      <li><a class="active"href="#reg-milestones-activities">Milestones & Activities</a></li>
+      <li><a class="active" href="#reg-message">Message</a></li>
+      <li><a class="active" href="#reg-ao">Administrative Officers</a></li>
+      <li><a class="active" href="#reg-affairs">Academic Affairs</a></li>
+      <li><a class="active" href="#gradutes">Graduates</a></li>
+      <li><a class="active" href="#reg-milestones-activities">Milestones & Activities</a></li>
       <li><a href="logout2.php">logout</a></li>
     </ul>
   </div>
   <div class="reg-container">
-    <section class="reg-m" id="reg-message">
+    <section class="reg-section" id="reg-message">
 
     </section>
-    <section class="reg-ao" id="reg-ao">
+    <section class="reg-section" id="reg-ao">
       <?php
       //just add form tag here to use the search function
       $db = mysqli_connect('localhost', 'root', '', 'yearbook');
@@ -105,31 +105,17 @@
         ?>
       </table>
     </section>
-    <section id="reg-affairs">
+    <section class="reg-section" id="reg-affairs">
 
     </section>
-    <section id="graduates">
+    <section class="reg-section" id="graduates">
 
     </section>
-    <section id="reg-milestones-activities">
+    <section class="reg-section" id="reg-milestones-activities">
 
     </section>
   </div>
-<!--<form action="scripts.php" method="post">
-<div class="row">
-  <div class="column" style="width:190px;">
-<div id="mySidenav" class="sidenav">
-  <p style="margin-left: 15px;margin-bottom: 0;color:white;"><strong> <?php echo $_SESSION['User'] ?></strong><br>Registrar<br>&nbsp;</p>
-  <a href="#">Message</a>
-  <a href="tabs2.php">Administrative Officers</a>
-  <a href="tabs3.php">Academic Affairs</a>
-  <a href="tabs8.php">Graduates</a>
-  <a href="tabs11.php">Milestones & activities</a>
-  <a href="logout.php">Logout</a>
-</div>
-
-</div>
-</div>
-</form>-->
+  <script src="styles/js/jquery-3.6.0.js"></script>
+  <script src="styles/js/reg.js"></script>
 </body>
 </html>
