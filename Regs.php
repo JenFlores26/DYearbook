@@ -54,7 +54,6 @@
       }
       $result = mysqli_query($db,$sql);
       ?>
-
       <div class="search-container">
         <div>
             <input type="text" placeholder="Search.." name="search" value="<?php echo $searchKey; ?>">
