@@ -54,19 +54,20 @@
       }
       $result = mysqli_query($db,$sql);
       ?>
-      <div class="search-container">
-        <div>
-            <input type="text" placeholder="Search.." name="search" value="<?php echo $searchKey; ?>">
-            <button type="submit"><i class="fas fa-search"></i></button>
+      <form action="" method="post"  enctype="multipart/form-data">
+        <div class="search-container">
+            <div>
+                <input type="text" placeholder="Search.." name="search" value="<?php echo $searchKey; ?>">
+                <button type="submit" name="search"><!--<i class="fas fa-search">--></i></button>
+            </div>
+          <script type="text/javascript">
+           window.addEventListener('keydown',function(e){
+              if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){
+              if(e.target.nodeName=='INPUT'&&e.target.type=='text'){
+              e.preventDefault();return false;}}},true);
+            </script>
         </div>
-        </form>
-        <script type="text/javascript">
-         window.addEventListener('keydown',function(e){
-            if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){
-            if(e.target.nodeName=='INPUT'&&e.target.type=='text'){
-            e.preventDefault();return false;}}},true);
-          </script>
-      </div>
+      </form>
 
       <table>
         <tbody>
