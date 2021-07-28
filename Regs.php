@@ -40,6 +40,7 @@
 
     </section>
     <section class="reg-section" id="reg-ao">
+      <form>
       <?php
       //just add form tag here to use the search function
       $db = mysqli_connect('localhost', 'root', '', 'yearbook');
