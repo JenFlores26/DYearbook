@@ -16,6 +16,7 @@
   <link rel="stylesheet" type="text/css" href="styles/style4.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="shortcut icon" href="styles/CvSU/logo.ico">
+<script src="styles/js/jquery-3.6.0.js"></script>
 </head>
 <body>
   <div class="sidenav" id="mySidenav">
@@ -38,6 +39,43 @@
   <div class="reg-container">
     <section class="reg-section" id="reg-message">
 
+      <div class="search-container">
+          <div>
+              <input type="text" placeholder="Search.." name="search-text" id="search_text">
+          </div>
+          <br>
+          <div id="result"></div>
+      </div>
+
+      <script>
+        $(document).ready(function(){
+        	load_data();
+        	function load_data(query)
+        	{
+        		$.ajax({
+        			url:"fetch.php",
+        			method:"post",
+        			data:{query:query},
+        			success:function(data)
+        			{
+        				$('#result').html(data);
+        			}
+        		});
+        	}
+
+        	$('#search_text').keyup(function(){
+        		var search = $(this).val();
+        		if(search != '')
+        		{
+        			load_data(search);
+        		}
+        		else
+        		{
+        			load_data();
+        		}
+        	});
+        });
+      </script>
     </section>
     <section class="reg-section" id="reg-ao">
       <form>
@@ -116,7 +154,6 @@
 
     </section>
   </div>
-  <script src="styles/js/jquery-3.6.0.js"></script>
   <script src="styles/js/reg.js"></script>
 </body>
 </html>

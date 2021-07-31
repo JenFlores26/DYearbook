@@ -73,19 +73,21 @@ li.active{ /*active jquery sidenav link*/
   height: 100vh;
 }
 .reg-container > section{
-  padding-left:200px;
+  width: 80vw;
+  margin-left: 300px;
 }
 section{
+  display: flex;
+  height: 100vh;
+
 }
 /*search-container*/
 .search-container{
-  display:inline-block;
-  margin-top:3vh;
-  margin-bottom:3vh;
+
+  margin-top:5vh;
   width: 15vw;
   height: 50px;
   margin-right:100px;
-  float:right;
 }
 .search-container > div{
   display: flex;

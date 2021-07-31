@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!--<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>-->
 <link rel="shortcut icon" href="styles/CvSU/logo.ico">
+<script src="styles/js/jquery-3.6.0.js"></script>
 </head>
 <body>
   <div class="sidenav" id="mySidenav">
@@ -43,11 +44,60 @@
 
   <div class="adm-container">
     <section class="adm-section" id="adm-message">
+      <!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Search Filterable Table - JQuery</title>
+</head>
+<body>
+	<div class="container alert alert-light"></div>
+	<h2>Search Filterable Table</h2>
+	<br>
+	<input id="search" type="text" class="form-control" placeholder="Seach for name">
+	<br>
 
+	<table class="table">
+		<thead>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+			</tr>
+		</thead>
+		<tbody id="table">
+			<tr>
+				<td>Erik</td>
+				<td>erik@example.com</td>
+			</tr>
+			<tr>
+				<td>Maik</td>
+				<td>jen@example.com</td>
+			</tr>
+			<tr>
+				<td>Hossain</td>
+				<td>rabby@example.com</td>
+			</tr>
+			<tr>
+				<td>Thomas</td>
+				<td>flores@example</td>
+			</tr>
+		</tbody>
+	</table>
+	<script>
+		$("#search").on("keyup",function(){
+			let value = $(this).val().toLowerCase();
+			$("#table tr").filter(function(){
+
+				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+			});
+		});
+	</script>
+</body>
+</html>
     </section>
     <section class="adm-section" id="adm-ao">
+
       <?php
-      //just add form tag here to use the search function
       $db = mysqli_connect('localhost', 'root', '', 'yearbook');
 
       if(isset($_POST['search'])){
@@ -62,21 +112,24 @@
       ?>
 
       <div class="search-container">
+        <form method="post">
         <div>
+            <input id="search" type="text" name="" value="" placeholder="Try to Search">
             <input type="text" placeholder="Search.." name="search" value="<?php echo $searchKey; ?>">
-            <button type="submit"><i class="fas fa-search"></i></button>
+            <button><i class="fas fa-search"></i></button>
         </div>
-        </form>
+
         <script type="text/javascript">
          window.addEventListener('keydown',function(e){
             if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){
             if(e.target.nodeName=='INPUT'&&e.target.type=='text'){
             e.preventDefault();return false;}}},true);
           </script>
+          </form>
       </div>
 
-      <table>
-        <tbody>
+      <table class="table">
+        <tbody id="table">
         <tr>
             <th>Image</th>
             <th>First Name</th>
@@ -100,6 +153,15 @@
         mysqli_close($db);
         ?>
       </table>
+      <script>
+    		$("#search").on("keyup",function(){
+    			let value = $(this).val().toLowerCase();
+    			$("#table tr").filter(function(){
+
+    				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    			});
+    		});
+    	</script>
     </section>
     <section class="adm-section" id="adm-affairs">
       <?php
@@ -378,7 +440,6 @@
       </table>
     </section>
   </div>
-  <script src="styles/js/jquery-3.6.0.js"></script>
   <script src="styles/js/admin.js"></script>
 </body>
 </html>
