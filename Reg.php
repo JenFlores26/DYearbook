@@ -44,124 +44,46 @@
 
   <div class="adm-container">
     <section class="adm-section" id="adm-message">
-      <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Search Filterable Table - JQuery</title>
-</head>
-<body>
-	<div class="container alert alert-light"></div>
-	<h2>Search Filterable Table</h2>
-	<br>
-	<input id="search" type="text" class="form-control" placeholder="Seach for name">
-	<br>
 
-	<table class="table">
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Email</th>
-			</tr>
-		</thead>
-		<tbody id="table">
-			<tr>
-				<td>Erik</td>
-				<td>erik@example.com</td>
-			</tr>
-			<tr>
-				<td>Maik</td>
-				<td>jen@example.com</td>
-			</tr>
-			<tr>
-				<td>Hossain</td>
-				<td>rabby@example.com</td>
-			</tr>
-			<tr>
-				<td>Thomas</td>
-				<td>flores@example</td>
-			</tr>
-		</tbody>
-	</table>
-	<script>
-		$("#search").on("keyup",function(){
-			let value = $(this).val().toLowerCase();
-			$("#table tr").filter(function(){
-
-				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-			});
-		});
-	</script>
-</body>
-</html>
     </section>
     <section class="adm-section" id="adm-ao">
-
-      <?php
-      $db = mysqli_connect('localhost', 'root', '', 'yearbook');
-
-      if(isset($_POST['search'])){
-      $searchKey=$_POST['search'];
-      $sql = "SELECT * from tab2 where lname LIKE '%$searchKey%' or fname LIKE '%$searchKey%' or mname LIKE '%$searchKey%' ORDER BY lname, year";
-      $result = mysqli_query($db,$sql);
-      }else{
-      $sql = "SELECT * from tab2 ORDER BY lname, year";
-      $searchKey="";
-      }
-      $result = mysqli_query($db,$sql);
-      ?>
-
       <div class="search-container">
-        <form method="post">
-        <div>
-            <input id="search" type="text" name="" value="" placeholder="Try to Search">
-            <input type="text" placeholder="Search.." name="search" value="<?php echo $searchKey; ?>">
-            <button><i class="fas fa-search"></i></button>
-        </div>
-
-        <script type="text/javascript">
-         window.addEventListener('keydown',function(e){
-            if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){
-            if(e.target.nodeName=='INPUT'&&e.target.type=='text'){
-            e.preventDefault();return false;}}},true);
-          </script>
-          </form>
+          <div>
+              <input type="text" placeholder="Search by name" name="search-text" id="search_text">
+              <button type="submit"><i class="fas fa-search"></i></button>
+          </div>
+          <br>
+          <div id="result"></div>
       </div>
-
-      <table class="table">
-        <tbody id="table">
-        <tr>
-            <th>Image</th>
-            <th>First Name</th>
-            <th>Middle Initial</th>
-            <th>Last Name</th>
-            <th>Position</th>
-            <th>Year</th>
-        </tr>
-
-        <?php
-        while($row = mysqli_fetch_array($result)){
-        echo "<tr class='main'>";
-        echo "<td>".'<img class="image-official" src="data:image/jpeg;base64,'.base64_encode($row['image1'] ).'"/>'."</td>";
-        echo "<td>" . $row['fname'] . "</td>";
-        echo "<td>" . $row['mname'] . "</td>";
-        echo "<td>" . $row['lname'] . "</td>";
-        echo "<td>" . $row['position'] . "</td>";
-        echo "<td>" . $row['year'] . "</td>";
-        echo "</tr>";
-        }
-        mysqli_close($db);
-        ?>
-      </table>
       <script>
-    		$("#search").on("keyup",function(){
-    			let value = $(this).val().toLowerCase();
-    			$("#table tr").filter(function(){
+        $(document).ready(function(){
+          load_data();
+          function load_data(Squery)
+          {
+            $.ajax({
+              url:"admAoFetch.php",
+              method:"post",
+              data:{Squery:Squery},
+              success:function(data)
+              {
+                $('#result').html(data);
+              }
+            });
+          }
 
-    				$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    			});
-    		});
-    	</script>
+          $('#search_text').keyup(function(){
+            var search = $(this).val();
+            if(search != '')
+            {
+              load_data(search);
+            }
+            else
+            {
+              load_data();
+            }
+          });
+        });
+      </script>
     </section>
     <section class="adm-section" id="adm-affairs">
       <?php
@@ -173,7 +95,7 @@
       $sql = "SELECT * from tab3 where lname LIKE '%$searchKey%' or fname LIKE '%$searchKey%' or mname LIKE '%$searchKey%' ORDER BY lname, year";
       $result = mysqli_query($db,$sql);
       }else{
-      $sql = "SELECT * from tab3 ORDER BY lname, year";
+      $sql = "SELECT * from tab2 ORDER BY lname, year";
       $searchKey="";
       }
       $result = mysqli_query($db,$sql);
@@ -206,14 +128,14 @@
 
         <?php
         while($row = mysqli_fetch_array($result)){
-        echo "<tr class='main'>";
-        echo "<td>".'<img class="image-official" src="data:image/jpeg;base64,'.base64_encode($row['image1'] ).'"/>'."</td>";
-        echo "<td>" . $row['fname'] . "</td>";
-        echo "<td>" . $row['mname'] . "</td>";
-        echo "<td>" . $row['lname'] . "</td>";
-        echo "<td>" . $row['position'] . "</td>";
-        echo "<td>" . $row['year'] . "</td>";
-        echo "</tr>";
+          echo "<tr class='main'>";
+          echo "<td>".'<img class="image-official" src="data:image/jpeg;base64,'.base64_encode($row['image1'] ).'"/>'."</td>";
+          echo "<td>" . $row['fname'] . "</td>";
+          echo "<td>" . $row['mname'] . "</td>";
+          echo "<td>" . $row['lname'] . "</td>";
+          echo "<td>" . $row['position'] . "</td>";
+          echo "<td>" . $row['year'] . "</td>";
+          echo "</tr>";
         }
         mysqli_close($db);
         ?>

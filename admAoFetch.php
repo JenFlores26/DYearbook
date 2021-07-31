@@ -1,17 +1,10 @@
 <?php
-session_start();
-
-if(!isset($_SESSION['User']))
-{
-  echo "<script>alert('You must login first.');window.location='logout.php';</script>";
-}
-isset($_SESSION['User']);
 
 $connect = mysqli_connect("localhost", "root", "", "yearbook");
 $output = '';
-if(isset($_POST["query"]))
+if(isset($_POST["Squery"]))
 {
-	$search = mysqli_real_escape_string($connect, $_POST["query"]);
+	$search = mysqli_real_escape_string($connect, $_POST["Squery"]);
 	$query = "
 	SELECT * FROM tab2
 	WHERE fname LIKE '%".$search."%'
@@ -20,7 +13,7 @@ if(isset($_POST["query"]))
 else
 {
 	$query = "
-	SELECT * FROM tab2";
+	SELECT * FROM tab2 ORDER BY lname";
 }
 $result = mysqli_query($connect, $query);
 
@@ -37,7 +30,6 @@ if(mysqli_num_rows($result) > 0)
 							<th>Last Name</th>
 							<th>Position</th>
 							<th>Year</th>
-              <th>Action</th>
 						</tr>';
 	while($row = mysqli_fetch_array($result))
 	{
@@ -49,14 +41,6 @@ if(mysqli_num_rows($result) > 0)
 				<td>'.$row["mname"].'</td>
 				<td>'.$row["position"].'</td>
 				<td>'.$row["year"].'</td>
-        <td align="center">
-                <button class="button2" style="border:1px solid;width:30px;">
-              <a class="delbtn" style="text-decoration:none; color:white;" href ="registarFunction.php?edit='.$row["id"].'">&#9998;</a>
-                </button>
-                <button class="button3" style="border:1px solid;width:30px;">
-              <a class="delbtn" style="text-decoration:none; color:white;" href="registarFunction.php?email='.$row["fname"].'">&#128465;</a>
-                </button>
-              </td>
 			</tr>
 		';
 	}

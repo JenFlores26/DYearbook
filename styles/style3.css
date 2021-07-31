@@ -69,29 +69,34 @@ li.active{ /*active jquery sidenav link*/
 }
 /* adm-container div*/
 .adm-container{
+  display: inline-flex;
   width: 100vw;
   height: 100vh;
 }
 .adm-container > section{
-  padding-left:200px;
+  width: 80vw;
+  margin-left: 250px;
+}
+section{
+  height: 100vh;
 }
 /*search-container*/
 .search-container{
-  padding-top:3vh;
-  padding-bottom:3vh;
+  margin-top:5vh;
   width: 15vw;
-  float: right;
+  height: 50px;
   margin-right:100px;
-}
-.search-container input{
-  padding-left: 10px;
-  width: 180px;
-  height: 45px;
-  border:none;
 }
 .search-container > div{
   display: flex;
 }
+.search-container input{
+  padding-left: 10px;
+  width: 80%;
+  height: 45px;
+  border:none;
+}
+
 button{
   background-color: #0275d8;
   border:none;
