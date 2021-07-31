@@ -39,9 +39,11 @@
   <div class="reg-container">
     <section class="reg-section" id="reg-message">
 
+    </section>
+    <section class="reg-section" id="reg-ao">
       <div class="search-container">
           <div>
-              <input type="text" placeholder="Search.." name="search-text" id="search_text">
+              <input type="text" placeholder="Search by name" name="search-text" id="search_text">
           </div>
           <br>
           <div id="result"></div>
@@ -49,100 +51,33 @@
 
       <script>
         $(document).ready(function(){
-        	load_data();
-        	function load_data(query)
-        	{
-        		$.ajax({
-        			url:"fetch.php",
-        			method:"post",
-        			data:{query:query},
-        			success:function(data)
-        			{
-        				$('#result').html(data);
-        			}
-        		});
-        	}
+          load_data();
+          function load_data(query)
+          {
+            $.ajax({
+              url:"fetch.php",
+              method:"post",
+              data:{query:query},
+              success:function(data)
+              {
+                $('#result').html(data);
+              }
+            });
+          }
 
-        	$('#search_text').keyup(function(){
-        		var search = $(this).val();
-        		if(search != '')
-        		{
-        			load_data(search);
-        		}
-        		else
-        		{
-        			load_data();
-        		}
-        	});
+          $('#search_text').keyup(function(){
+            var search = $(this).val();
+            if(search != '')
+            {
+              load_data(search);
+            }
+            else
+            {
+              load_data();
+            }
+          });
         });
       </script>
-    </section>
-    <section class="reg-section" id="reg-ao">
-      <form>
-      <?php
-      //just add form tag here to use the search function
-      $db = mysqli_connect('localhost', 'root', '', 'yearbook');
-
-      if(isset($_POST['search'])){
-      $searchKey=$_POST['search'];
-      $sql = "SELECT * from tab2 where lname LIKE '%$searchKey%' or fname LIKE '%$searchKey%' or mname LIKE '%$searchKey%' ORDER BY lname, year";
-      $result = mysqli_query($db,$sql);
-      }else{
-      $sql = "SELECT * from tab2 ORDER BY lname, year";
-      $searchKey="";
-      }
-      $result = mysqli_query($db,$sql);
-      ?>
-      <form action="" method="post"  enctype="multipart/form-data">
-        <div class="search-container">
-            <div>
-                <input type="text" placeholder="Search.." name="search" value="<?php echo $searchKey; ?>">
-                <button type="submit" name="search"><!--<i class="fas fa-search">--></i></button>
-            </div>
-          <script type="text/javascript">
-           window.addEventListener('keydown',function(e){
-              if(e.keyIdentifier=='U+000A'||e.keyIdentifier=='Enter'||e.keyCode==13){
-              if(e.target.nodeName=='INPUT'&&e.target.type=='text'){
-              e.preventDefault();return false;}}},true);
-            </script>
-        </div>
-      </form>
-
-      <table>
-        <tbody>
-        <tr>
-            <th>Image</th>
-            <th>First Name</th>
-            <th>Middle Initial</th>
-            <th>Last Name</th>
-            <th>Position</th>
-            <th>Year</th>
-            <th>Action</th>
-        </tr>
-
-        <?php
-        while($row = mysqli_fetch_array($result)){
-        echo "<tr class='main'>";
-        echo "<td>".'<img class="image-official" src="data:image/jpeg;base64,'.base64_encode($row['image1'] ).'"/>'."</td>";
-        echo "<td>" . $row['fname'] . "</td>";
-        echo "<td>" . $row['mname'] . "</td>";
-        echo "<td>" . $row['lname'] . "</td>";
-        echo "<td>" . $row['position'] . "</td>";
-        echo "<td>" . $row['year'] . "</td>";
-        //Action button
-        echo "<td>
-                  <button class='button2'>
-                    <a href ='registarFunctions.php?edit2=".$row['id']."'>&#9998;</a>
-                  </button>
-                  <button class='button3'>
-                <a class='delbtn'  href='registarFunctions.php?email2=".$row['fname']."'>&#128465;</a>
-                  </button>
-                  </td>";
-        echo "</tr>";
-        }
-        mysqli_close($db);
-        ?>
-      </table>
     </section>
     <section class="reg-section" id="reg-affairs">
 
