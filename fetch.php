@@ -1,11 +1,4 @@
 <?php
-session_start();
-
-if(!isset($_SESSION['User']))
-{
-  echo "<script>alert('You must login first.');window.location='logout.php';</script>";
-}
-isset($_SESSION['User']);
 
 $connect = mysqli_connect("localhost", "root", "", "yearbook");
 $output = '';

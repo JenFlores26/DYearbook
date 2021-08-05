@@ -128,7 +128,7 @@ tr{
 tr:nth-child(odd):not(:first-child){
    background-color: #ebf3f9;
 }
-tr:first-child{
+  tr:first-child{
   background-color: #0275d8;
   padding:15px;
   color:#fff;
