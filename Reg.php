@@ -31,7 +31,7 @@
     </header>
   <ul class="nav">
     <li><a class="active admin-m" href="#adm-message">Message</a></li>
-    <li><a class="active admin-ao" href="#adm-ao">Administrative Officers</a></li>
+    <li><a class="active admin-ao" href="adm-tab2.php">Administrative Officers</a></li>
     <li><a class="active"href="#adm-affairs">Academic Affairs</a></li>
     <li><a class="active"href="#gradutes">Graduates</a></li>
     <li><a class="active"href="#adm-milestones-activities">Milestones & Activities</a></li>
