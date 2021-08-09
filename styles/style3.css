@@ -40,7 +40,6 @@ i{
   font-family:"Font Awesome 5 Free";
   font-weight: 900;
   content: "\f007";
-
 }
 .sidenav{
   margin: 0;
@@ -64,12 +63,13 @@ i{
   color: yellow;
   padding-left:30px;
 }
-li.active{ /*active jquery sidenav link*/
-  background: #020cbd;
+li .active{ /*active jquery sidenav link*/
+  background-color: #020cbd;
 }
 /* adm-container div*/
 .adm-container{
   display: inline-flex;
+  border: 4px solid red;
   width: 100vw;
   height: 100vh;
 }
