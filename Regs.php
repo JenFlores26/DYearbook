@@ -28,7 +28,7 @@
       </div>
     </header>
     <ul class="nav">
-      <li><a class="active" href="#reg-message">Message</a></li>
+      <li><a class="active" href="./Regs.php?page=reg_ao">Message</a></li>
       <li><a class="active" href="#reg-ao">Administrative Officers</a></li>
       <li><a class="active" href="#reg-affairs">Academic Affairs</a></li>
       <li><a class="active" href="#gradutes">Graduates</a></li>
@@ -37,9 +37,17 @@
     </ul>
   </div>
   <div class="reg-container">
-    <section class="reg-section" id="reg-message">
-
+    <section class="reg-section">
+      <?php
+      $page = isset($_GET['page']) ? $_GET['page'] : 'reg_AO';
+      if(file_exists($page.".php")){
+        include $page.'.php';
+      }else{
+        include '404.html';
+      }
+      ?>
     </section>
+    <!--
     <section class="reg-section" id="reg-ao">
       <div class="search-container">
           <div>
@@ -88,7 +96,7 @@
     <section class="reg-section" id="reg-milestones-activities">
 
     </section>
-  </div>
+  </div>-->
   <script src="styles/js/reg.js"></script>
 </body>
 </html>

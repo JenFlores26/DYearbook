@@ -11,7 +11,7 @@ $(document).ready(function(){
   });
   $(".adm-section").hide();
   $('a[href^="#"]').on('click',function(event){
-  	$('.adm-section').hide();
+  	$('.adm-section').show();
   	var target = $(this).attr('href');
   	$('.adm-section'+target).toggle();
   });
