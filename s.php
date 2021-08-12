@@ -1,17 +1,14 @@
-<?php 
+<?php
 $mysqli = new mysqli('localhost','root','','yearbook') or die(mysqli_error($mysqli));
 
 if(isset($_POST['save'])){
 	$id = $_POST['ids'];
-	$ids = $_POST['id2'];
-	$email = $_POST['email'];
-	$password = $_POST['password'];
 	$fname = $_POST['firstname'];
 	$mname = $_POST['middlename'];
 	$lname = $_POST['lastname'];
 
-	$mysqli->query("UPDATE confirmed SET Sid='$ids', email='$email', password='$password', fname='$fname', mname='$mname', lname='$lname' WHERE id='$id'") or die($mysqli->error());
-	echo "<script>alert('Edit Successfully!');window.location='Reg1.php';</script>";
+	$mysqli->query("UPDATE tab2 SET id='$id', fname='$fname', mname='$mname', lname='$lname' WHERE id='$id'") or die($mysqli->error());
+	echo "<script>alert('Edit Successfully!');window.location='Regs.php';</script>";
 }
 
 if(isset($_POST['save2'])){

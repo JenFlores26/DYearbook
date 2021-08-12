@@ -1,5 +1,5 @@
-<?php 
-session_start();
+<?php
+/*
 
     if(!isset($_SESSION['User2']))
     {
@@ -8,6 +8,7 @@ session_start();
     else{
     isset($_SESSION['User2']);
 }
+*/
 $mysqli = new mysqli('localhost','root','','yearbook') or die(mysqli_error($mysqli));
 
 #registrar (Delete)
@@ -131,7 +132,7 @@ if(isset($_GET['edit'])){
   padding: 0px;
 }
 body {
-margin-top:10px;	
+margin-top:10px;
   font-size: 120%;
   background-color:gray;
   font-family: 'Ubuntu', sans-serif;
@@ -187,23 +188,23 @@ form, .content {
         margin-left: 35%;
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-    
+
 }
 .error {
-  width: 95%; 
-  margin: 0px auto; 
-  padding: 5px; 
-  border: 1px solid #a94442; 
-  color: #a94442; 
-  background: #f2dede; 
-  border-radius: 5px; 
+  width: 95%;
+  margin: 0px auto;
+  padding: 5px;
+  border: 1px solid #a94442;
+  color: #a94442;
+  background: #f2dede;
+  border-radius: 5px;
   text-align: left;
   font-family: 'Ubuntu', sans-serif;
   font-size: 13px;
 }
 .success {
-  color: #3c763d; 
-  background: #dff0d8; 
+  color: #3c763d;
+  background: #dff0d8;
   border: 1px solid #3c763d;
   margin-bottom: 20px;
 }
@@ -262,7 +263,7 @@ if(isset($_GET['edit2'])){
   padding: 0px;
 }
 body {
-margin-top:10px;  
+margin-top:10px;
   font-size: 120%;
   background-color:gray;
   font-family: 'Ubuntu', sans-serif;
@@ -318,23 +319,23 @@ form, .content {
         margin-left: 35%;
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-    
+
 }
 .error {
-  width: 95%; 
-  margin: 0px auto; 
-  padding: 5px; 
-  border: 1px solid #a94442; 
-  color: #a94442; 
-  background: #f2dede; 
-  border-radius: 5px; 
+  width: 95%;
+  margin: 0px auto;
+  padding: 5px;
+  border: 1px solid #a94442;
+  color: #a94442;
+  background: #f2dede;
+  border-radius: 5px;
   text-align: left;
   font-family: 'Ubuntu', sans-serif;
   font-size: 13px;
 }
 .success {
-  color: #3c763d; 
-  background: #dff0d8; 
+  color: #3c763d;
+  background: #dff0d8;
   border: 1px solid #3c763d;
   margin-bottom: 20px;
 }
@@ -394,7 +395,7 @@ if(isset($_GET['edit3'])){
   padding: 0px;
 }
 body {
-margin-top:10px;  
+margin-top:10px;
   font-size: 120%;
   background-color:gray;
   font-family: 'Ubuntu', sans-serif;
@@ -450,23 +451,23 @@ form, .content {
         margin-left: 35%;
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-    
+
 }
 .error {
-  width: 95%; 
-  margin: 0px auto; 
-  padding: 5px; 
-  border: 1px solid #a94442; 
-  color: #a94442; 
-  background: #f2dede; 
-  border-radius: 5px; 
+  width: 95%;
+  margin: 0px auto;
+  padding: 5px;
+  border: 1px solid #a94442;
+  color: #a94442;
+  background: #f2dede;
+  border-radius: 5px;
   text-align: left;
   font-family: 'Ubuntu', sans-serif;
   font-size: 13px;
 }
 .success {
-  color: #3c763d; 
-  background: #dff0d8; 
+  color: #3c763d;
+  background: #dff0d8;
   border: 1px solid #3c763d;
   margin-bottom: 20px;
 }
@@ -526,7 +527,7 @@ if(isset($_GET['edit4'])){
   padding: 0px;
 }
 body {
-margin-top:10px;  
+margin-top:10px;
   font-size: 120%;
   background-color:gray;
   font-family: 'Ubuntu', sans-serif;
@@ -582,23 +583,23 @@ form, .content {
         margin-left: 35%;
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-    
+
 }
 .error {
-  width: 95%; 
-  margin: 0px auto; 
-  padding: 5px; 
-  border: 1px solid #a94442; 
-  color: #a94442; 
-  background: #f2dede; 
-  border-radius: 5px; 
+  width: 95%;
+  margin: 0px auto;
+  padding: 5px;
+  border: 1px solid #a94442;
+  color: #a94442;
+  background: #f2dede;
+  border-radius: 5px;
   text-align: left;
   font-family: 'Ubuntu', sans-serif;
   font-size: 13px;
 }
 .success {
-  color: #3c763d; 
-  background: #dff0d8; 
+  color: #3c763d;
+  background: #dff0d8;
   border: 1px solid #3c763d;
   margin-bottom: 20px;
 }
@@ -658,7 +659,7 @@ if(isset($_GET['edit5'])){
   padding: 0px;
 }
 body {
-margin-top:10px;  
+margin-top:10px;
   font-size: 120%;
   background-color:gray;
   font-family: 'Ubuntu', sans-serif;
@@ -714,23 +715,23 @@ form, .content {
         margin-left: 35%;
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-    
+
 }
 .error {
-  width: 95%; 
-  margin: 0px auto; 
-  padding: 5px; 
-  border: 1px solid #a94442; 
-  color: #a94442; 
-  background: #f2dede; 
-  border-radius: 5px; 
+  width: 95%;
+  margin: 0px auto;
+  padding: 5px;
+  border: 1px solid #a94442;
+  color: #a94442;
+  background: #f2dede;
+  border-radius: 5px;
   text-align: left;
   font-family: 'Ubuntu', sans-serif;
   font-size: 13px;
 }
 .success {
-  color: #3c763d; 
-  background: #dff0d8; 
+  color: #3c763d;
+  background: #dff0d8;
   border: 1px solid #3c763d;
   margin-bottom: 20px;
 }
@@ -789,7 +790,7 @@ if(isset($_GET['edit6'])){
   padding: 0px;
 }
 body {
-margin-top:10px;  
+margin-top:10px;
   font-size: 120%;
   background-color:gray;
   font-family: 'Ubuntu', sans-serif;
@@ -845,23 +846,23 @@ form, .content {
         margin-left: 35%;
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-    
+
 }
 .error {
-  width: 95%; 
-  margin: 0px auto; 
-  padding: 5px; 
-  border: 1px solid #a94442; 
-  color: #a94442; 
-  background: #f2dede; 
-  border-radius: 5px; 
+  width: 95%;
+  margin: 0px auto;
+  padding: 5px;
+  border: 1px solid #a94442;
+  color: #a94442;
+  background: #f2dede;
+  border-radius: 5px;
   text-align: left;
   font-family: 'Ubuntu', sans-serif;
   font-size: 13px;
 }
 .success {
-  color: #3c763d; 
-  background: #dff0d8; 
+  color: #3c763d;
+  background: #dff0d8;
   border: 1px solid #3c763d;
   margin-bottom: 20px;
 }
@@ -921,7 +922,7 @@ if(isset($_GET['edit7'])){
   padding: 0px;
 }
 body {
-margin-top:10px;  
+margin-top:10px;
   font-size: 120%;
   background-color:gray;
   font-family: 'Ubuntu', sans-serif;
@@ -977,23 +978,23 @@ form, .content {
         margin-left: 35%;
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-    
+
 }
 .error {
-  width: 95%; 
-  margin: 0px auto; 
-  padding: 5px; 
-  border: 1px solid #a94442; 
-  color: #a94442; 
-  background: #f2dede; 
-  border-radius: 5px; 
+  width: 95%;
+  margin: 0px auto;
+  padding: 5px;
+  border: 1px solid #a94442;
+  color: #a94442;
+  background: #f2dede;
+  border-radius: 5px;
   text-align: left;
   font-family: 'Ubuntu', sans-serif;
   font-size: 13px;
 }
 .success {
-  color: #3c763d; 
-  background: #dff0d8; 
+  color: #3c763d;
+  background: #dff0d8;
   border: 1px solid #3c763d;
   margin-bottom: 20px;
 }
@@ -1052,7 +1053,7 @@ if(isset($_GET['edit8'])){
   padding: 0px;
 }
 body {
-margin-top:10px;  
+margin-top:10px;
   font-size: 120%;
   background-color:gray;
   font-family: 'Ubuntu', sans-serif;
@@ -1108,23 +1109,23 @@ form, .content {
         margin-left: 35%;
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-    
+
 }
 .error {
-  width: 95%; 
-  margin: 0px auto; 
-  padding: 5px; 
-  border: 1px solid #a94442; 
-  color: #a94442; 
-  background: #f2dede; 
-  border-radius: 5px; 
+  width: 95%;
+  margin: 0px auto;
+  padding: 5px;
+  border: 1px solid #a94442;
+  color: #a94442;
+  background: #f2dede;
+  border-radius: 5px;
   text-align: left;
   font-family: 'Ubuntu', sans-serif;
   font-size: 13px;
 }
 .success {
-  color: #3c763d; 
-  background: #dff0d8; 
+  color: #3c763d;
+  background: #dff0d8;
   border: 1px solid #3c763d;
   margin-bottom: 20px;
 }
@@ -1183,7 +1184,7 @@ if(isset($_GET['edit9'])){
   padding: 0px;
 }
 body {
-margin-top:10px;  
+margin-top:10px;
   font-size: 120%;
   background-color:gray;
   font-family: 'Ubuntu', sans-serif;
@@ -1239,23 +1240,23 @@ form, .content {
         margin-left: 35%;
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-    
+
 }
 .error {
-  width: 95%; 
-  margin: 0px auto; 
-  padding: 5px; 
-  border: 1px solid #a94442; 
-  color: #a94442; 
-  background: #f2dede; 
-  border-radius: 5px; 
+  width: 95%;
+  margin: 0px auto;
+  padding: 5px;
+  border: 1px solid #a94442;
+  color: #a94442;
+  background: #f2dede;
+  border-radius: 5px;
   text-align: left;
   font-family: 'Ubuntu', sans-serif;
   font-size: 13px;
 }
 .success {
-  color: #3c763d; 
-  background: #dff0d8; 
+  color: #3c763d;
+  background: #dff0d8;
   border: 1px solid #3c763d;
   margin-bottom: 20px;
 }
@@ -1313,7 +1314,7 @@ if(isset($_GET['edit10'])){
   padding: 0px;
 }
 body {
-margin-top:10px;  
+margin-top:10px;
   font-size: 120%;
   background-color:gray;
   font-family: 'Ubuntu', sans-serif;
@@ -1369,23 +1370,23 @@ form, .content {
         margin-left: 35%;
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-    
+
 }
 .error {
-  width: 95%; 
-  margin: 0px auto; 
-  padding: 5px; 
-  border: 1px solid #a94442; 
-  color: #a94442; 
-  background: #f2dede; 
-  border-radius: 5px; 
+  width: 95%;
+  margin: 0px auto;
+  padding: 5px;
+  border: 1px solid #a94442;
+  color: #a94442;
+  background: #f2dede;
+  border-radius: 5px;
   text-align: left;
   font-family: 'Ubuntu', sans-serif;
   font-size: 13px;
 }
 .success {
-  color: #3c763d; 
-  background: #dff0d8; 
+  color: #3c763d;
+  background: #dff0d8;
   border: 1px solid #3c763d;
   margin-bottom: 20px;
 }
@@ -1420,7 +1421,7 @@ echo "</style>";
     echo '<img class="imahe" style="width:80px; height:100px;" src="data:image/jpeg;base64,'.base64_encode($row['image'] ).'"/>';
     echo "<label>First Name:</label><input value='". $row['fname'] ."' name='firstname'></input>";
     echo "<label>Middle Name:</label><input value='". $row['mname'] ."' name='middlename'></input>";
-    echo "<label>Last Name:</label><input value='". $row['lname'] ."' name='lastname'></input>";  
+    echo "<label>Last Name:</label><input value='". $row['lname'] ."' name='lastname'></input>";
     echo "<label>Year:</label><input value='". $row['year'] ."'name='year'></input>";
     echo "<button type ='submit' class='button button1' name='save10'>SAVE</a></button>";
     echo "</form>";
@@ -1443,7 +1444,7 @@ if(isset($_GET['edit11'])){
   padding: 0px;
 }
 body {
-margin-top:10px;  
+margin-top:10px;
   font-size: 120%;
   background-color:gray;
   font-family: 'Ubuntu', sans-serif;
@@ -1499,23 +1500,23 @@ form, .content {
         margin-left: 35%;
         font-size: 13px;
         box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
-    
+
 }
 .error {
-  width: 95%; 
-  margin: 0px auto; 
-  padding: 5px; 
-  border: 1px solid #a94442; 
-  color: #a94442; 
-  background: #f2dede; 
-  border-radius: 5px; 
+  width: 95%;
+  margin: 0px auto;
+  padding: 5px;
+  border: 1px solid #a94442;
+  color: #a94442;
+  background: #f2dede;
+  border-radius: 5px;
   text-align: left;
   font-family: 'Ubuntu', sans-serif;
   font-size: 13px;
 }
 .success {
-  color: #3c763d; 
-  background: #dff0d8; 
+  color: #3c763d;
+  background: #dff0d8;
   border: 1px solid #3c763d;
   margin-bottom: 20px;
 }
