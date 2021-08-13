@@ -69,7 +69,7 @@ if (isset($_POST['lc'])) {
   }
 
   if (count($errors) == 0) {
-    $password = md5($password);
+    $password = $password;
               $query = "SELECT * FROM confirmed WHERE Sid='$username' AND password='$password'";
               $results=mysqli_query($db,$query);
               if (mysqli_num_rows($results) == 1) {

@@ -31,7 +31,7 @@
       <li><a class="active" href="#reg-message">Message</a></li>
       <li><a class="active" href="#reg-ao">Administrative Officers</a></li>
       <li><a class="active" href="#reg-affairs">Academic Affairs</a></li>
-      <li><a class="active" href="#gradutes">Graduates</a></li>
+      <li><a class="active" href="#reg-grad">Graduates</a></li>
       <li><a class="active" href="#reg-milestones-activities">Milestones & Activities</a></li>
       <li><a href="logout2.php">logout</a></li>
     </ul>
@@ -44,6 +44,7 @@
       <div class="search-container">
           <div>
               <input type="text" placeholder="Search by name" name="search-text" id="search_text">
+              <button type="submit"><i class="fas fa-search"></i></button>
           </div>
           <br>
           <div id="result"></div>
@@ -80,13 +81,124 @@
       </script>
     </section>
     <section class="reg-section" id="reg-affairs">
+      <div class="search-container">
+          <div>
+              <input type="text" placeholder="Search by name" name="search-text" id="search_text_affair">
+              <button type="submit"><i class="fas fa-search"></i></button>
+          </div>
+          <br>
+          <div id="result_affair"></div>
+      </div>
 
+      <script>
+        $(document).ready(function(){
+          load_data();
+          function load_data(affair_query)
+          {
+            $.ajax({
+              url:"regAffairFetch.php",
+              method:"post",
+              data:{affair_query:affair_query},
+              success:function(data)
+              {
+                $('#result_affair').html(data);
+              }
+            });
+          }
+
+          $('#search_text_affair').keyup(function(){
+            var search = $(this).val();
+            if(search != '')
+            {
+              load_data(search);
+            }
+            else
+            {
+              load_data();
+            }
+          });
+        });
+      </script>
     </section>
-    <section class="reg-section" id="graduates">
+    <section class="reg-section" id="reg-grad">
+      <div class="search-container">
+          <div>
+              <input type="text" placeholder="Search by name" name="search-text" id="search_text_graduates">
+              <button type="submit"><i class="fas fa-search"></i></button>
+          </div>
+          <br>
+          <div id="result_graduates"></div>
+      </div>
 
+      <script>
+        $(document).ready(function(){
+          load_data();
+          function load_data(graduates_query)
+          {
+            $.ajax({
+              url:"regGraduateFetch.php",
+              method:"post",
+              data:{graduates_query:graduates_query},
+              success:function(data)
+              {
+                $('#result_graduates').html(data);
+              }
+            });
+          }
+
+          $('#search_text_graduates').keyup(function(){
+            var search = $(this).val();
+            if(search != '')
+            {
+              load_data(search);
+            }
+            else
+            {
+              load_data();
+            }
+          });
+        });
+      </script>
     </section>
     <section class="reg-section" id="reg-milestones-activities">
+      <div class="search-container">
+          <div>
+              <input type="text" placeholder="Search milestones by year" name="search-text" id="search_text_milestone">
+              <button type="submit"><i class="fas fa-search"></i></button>
+          </div>
+          <br>
+          <div id="result_milestone"></div>
+      </div>
 
+      <script>
+        $(document).ready(function(){
+          load_data();
+          function load_data(milestone_query)
+          {
+            $.ajax({
+              url:"regMilestoneFetch.php",
+              method:"post",
+              data:{milestone_query:milestone_query},
+              success:function(data)
+              {
+                $('#result_milestone').html(data);
+              }
+            });
+          }
+
+          $('#search_text_milestone').keyup(function(){
+            var search = $(this).val();
+            if(search != '')
+            {
+              load_data(search);
+            }
+            else
+            {
+              load_data();
+            }
+          });
+        });
+      </script>
     </section>
   </div>
   <script src="styles/js/reg.js"></script>
