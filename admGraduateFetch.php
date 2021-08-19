@@ -1,10 +1,9 @@
 <?php
-
-$connect = mysqli_connect("localhost", "root", "", "yearbook");
+include 'db_connect.php';
 $output = '';
 if(isset($_POST["graduates_query"]))
 {
-	$search = mysqli_real_escape_string($connect, $_POST["graduates_query"]);
+	$search = mysqli_real_escape_string($db_connect, $_POST["graduates_query"]);
 	$query = "
 	SELECT * FROM shs
 	WHERE fname LIKE '%".$search."%'
@@ -15,7 +14,7 @@ else
 	$query = "
 	SELECT * FROM shs";
 }
-$result = mysqli_query($connect, $query);
+$result = mysqli_query($db_connect, $query);
 
 if(mysqli_num_rows($result) > 0)
 {

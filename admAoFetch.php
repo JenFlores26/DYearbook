@@ -1,10 +1,9 @@
 <?php
-
-$connect = mysqli_connect("localhost", "root", "", "yearbook");
+include 'db_connect.php';
 $output = '';
 if(isset($_POST["Squery"]))
 {
-	$search = mysqli_real_escape_string($connect, $_POST["Squery"]);
+	$search = mysqli_real_escape_string($db_connect, $_POST["Squery"]);
 	$query = "
 	SELECT * FROM tab2
 	WHERE fname LIKE '%".$search."%'
@@ -15,7 +14,7 @@ else
 	$query = "
 	SELECT * FROM tab2 ORDER BY lname";
 }
-$result = mysqli_query($connect, $query);
+$result = mysqli_query($db_connect, $query);
 
 if(mysqli_num_rows($result) > 0)
 {
