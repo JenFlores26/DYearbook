@@ -1,8 +1,8 @@
 <link rel="stylesheet" href="styles/style5.css">
 <div class="addMember">
-  <header>
+  <div class=".header">
     <h2>Add Member</h2>
-  </header>
+  </div>
   <form class="" action="" method="post">
 
       <div class="input-group">
@@ -35,9 +35,9 @@
         <input type="text" name="year" required>
       </div>
 
-      <div class="input-group">
-        <button type="submit" name="button" value="add">ADD</button>
-        <button type="submit" name="button" value="cancel">CANCEL</button>
+      <div>
+        <button class="button" type="submit" name="button" value="add">ADD</button>
+        <button class="cancel-btn button">CANCEL</button>
       </div>
   </form>
 </div>

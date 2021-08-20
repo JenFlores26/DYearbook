@@ -38,7 +38,9 @@
   </div>
   <div class="reg-container">
     <section class="reg-section" id="reg-message">
-
+      <button class="add-btn">Add Member</button>
+      <?php include 'addMember.php'; ?>
+      <script src="styles/js/form.js"></script>
     </section>
     <section class="reg-section" id="reg-ao">
       <div class="search-container">
