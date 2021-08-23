@@ -79,24 +79,20 @@ li.active{ /*active jquery sidenav link*/
 section{
   display: flex;
   height: 100vh;
-
+  width: 80vw;
 }
 /*search-container*/
 .search-container{
-
   margin-top:5vh;
-  width: 15vw;
-  height: 50px;
+  width:100vw;
+  height: auto;
   margin-right:100px;
 }
-.search-container > div{
-  display: flex;
-}
-.search-container input{
+.inp{
+  width: 100%;
   padding-left: 10px;
-  width: 80%;
-  height: 45px;
   border:none;
+  height: auto;
 }
 button{
   background-color: #0275d8;
@@ -104,6 +100,29 @@ button{
   border:none;
   padding:6px;
   color:white;
+}
+/*add-btn*/
+.add-btn{
+  width: 15%;
+  padding: 0;
+}
+.add-btn:hover{
+  cursor: pointer;
+}
+.topButton{
+  display: flex;
+  justify-content: space-between;
+}
+.input-icons{
+  display: flex;
+  width: 25%;
+  height: 50px;
+}
+i{
+  background-color: #0275d8;
+  padding: 5px 10px 10px 5px;
+  color: #fff;
+  min-width: 40px;
 }
 /*edit & delete */
 .button2{

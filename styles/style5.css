@@ -2,7 +2,6 @@
 *{
   margin:0;
   padding:0;
-  box-sizing: border-box;
 }
 
 .addMember{
@@ -37,20 +36,14 @@ form{
   visibility: visible;
 	opacity: 1;
 }
-.header{
-  background-color: red;
+.title{
+  padding: 0;
   text-align: center;
-  width: 25%;
+  width: 100%;
   height: 50px;
 }
 h2{
-  margin-top: 10px;
-  color:white;
-}
-input{
-  width: 20vw;
-  height: 30px;
-  padding-left: 10px;
+  color:black;
 }
 .button{
   width: 10vw;

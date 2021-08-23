@@ -38,15 +38,19 @@
   </div>
   <div class="reg-container">
     <section class="reg-section" id="reg-message">
-      <button class="add-btn">Add Member</button>
-      <?php include 'addMember.php'; ?>
-      <script src="styles/js/form.js"></script>
+      <button>Add Member</button>
+      <?php /* include 'tab3.2.php';*/ ?>
     </section>
     <section class="reg-section" id="reg-ao">
       <div class="search-container">
-          <div>
-              <input type="text" placeholder="Search by name" name="search-text" id="search_text">
-              <button type="submit"><i class="fas fa-search"></i></button>
+          <div class="topButton">
+              <button class="add-btn"><i class="fas fa-user-plus"></i>Add Member</button>
+              <?php include 'addMember.php';?>
+              <script src="styles/js/form.js"></script>
+              <div class="input-icons">
+                <input class="inp" type="text" placeholder="Search by name" name="search-text" id="search_text">
+                <i class="fas fa-search"></i>
+              </div>
           </div>
           <br>
           <div id="result"></div>
