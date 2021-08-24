@@ -14,6 +14,7 @@
   <title>Registrar Dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="styles/style4.css">
+  <link rel="stylesheet" type="text/css" href="styles/style5.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="shortcut icon" href="styles/CvSU/logo.ico">
 <script src="styles/js/jquery-3.6.0.js"></script>
@@ -38,15 +39,13 @@
   </div>
   <div class="reg-container">
     <section class="reg-section" id="reg-message">
-      <button>Add Member</button>
-      <?php /* include 'tab3.2.php';*/ ?>
+
     </section>
     <section class="reg-section" id="reg-ao">
       <div class="search-container">
           <div class="topButton">
               <button class="add-btn"><i class="fas fa-user-plus"></i>Add Member</button>
               <?php include 'addMember.php';?>
-              <script src="styles/js/form.js"></script>
               <div class="input-icons">
                 <input class="inp" type="text" placeholder="Search by name" name="search-text" id="search_text">
                 <i class="fas fa-search"></i>
@@ -88,10 +87,14 @@
     </section>
     <section class="reg-section" id="reg-affairs">
       <div class="search-container">
-          <div>
-              <input type="text" placeholder="Search by name" name="search-text" id="search_text_affair">
-              <button type="submit"><i class="fas fa-search"></i></button>
-          </div>
+        <div class="topButton">
+            <button class="add-btn"><i class="fas fa-user-plus"></i>Add Member</button>
+            <?php include 'addMember.php';?>
+            <div class="input-icons">
+              <input class="inp" type="text" placeholder="Search by name" name="search-text" id="search_text_affair">
+              <i class="fas fa-search"></i>
+            </div>
+        </div>
           <br>
           <div id="result_affair"></div>
       </div>
@@ -128,10 +131,14 @@
     </section>
     <section class="reg-section" id="reg-grad">
       <div class="search-container">
-          <div>
-              <input type="text" placeholder="Search by name" name="search-text" id="search_text_graduates">
-              <button type="submit"><i class="fas fa-search"></i></button>
-          </div>
+        <div class="topButton">
+            <button class="add-btn"><i class="fas fa-user-plus"></i>Add Member</button>
+            <?php include 'addMember.php';?>
+            <div class="input-icons">
+              <input class="inp" type="text" placeholder="Search by name" name="search-text" id="search_text_graduates">
+              <i class="fas fa-search"></i>
+            </div>
+        </div>
           <br>
           <div id="result_graduates"></div>
       </div>
@@ -208,5 +215,6 @@
     </section>
   </div>
   <script src="styles/js/reg.js"></script>
+  <script src="styles/js/form.js"></script>
 </body>
 </html>
