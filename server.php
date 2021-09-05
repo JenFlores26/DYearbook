@@ -81,6 +81,10 @@ if (isset($_POST['lc'])) {
                   $log = mysqli_fetch_assoc($resulta);
                   $tot= $log['year'];
                    $_SESSION['Users']= $tot;
+
+                   #add login time strnatcmp
+                   $date = date("Y:m:d H:i:s");// query for inser user log in to data base
+                  mysqli_query($db,"insert into userlog(Sid,usertype,loginTime) values('".$username."','Registrar','$date')");
                   echo "<script>alert('Registrar');window.location='Regs.php';</script>";
               }
               else if ($logged_in_user['usertype'] == 'Admin') {
@@ -90,6 +94,8 @@ if (isset($_POST['lc'])) {
                   $log = mysqli_fetch_assoc($resulta);
                   $tot= $log['year'];
                    $_SESSION['Users2']= $tot;
+                   $date = date("Y:m:d H:i:s");// query for inser user log in to data base
+                  mysqli_query($db,"insert into userlog(Sid,usertype,loginTime) values('".$username."','Admin','$date')");
                   echo "<script>alert('Admin');window.location='Reg.php';</script>";
 
             }
@@ -100,6 +106,8 @@ if (isset($_POST['lc'])) {
                   $log = mysqli_fetch_assoc($resulta);
                   $tot= $log['year'];
                    $_SESSION['Users3']= $tot;
+                   $date = date("Y:m:d H:i:s");// query for inser user log in to data base
+                  mysqli_query($db,"insert into userlog(Sid,usertype,loginTime) values('".$username."','Student','$date')");
                   echo "<script>alert('Student');window.location='display2.php';</script>";
               }
               else{
