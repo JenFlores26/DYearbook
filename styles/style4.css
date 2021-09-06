@@ -102,13 +102,13 @@ button{
   color:white;
 }
 /*add-btn*/
-.add-btn{
+/*.add-btn{
   width: 15%;
   padding: 0;
 }
 .add-btn:hover{
   cursor: pointer;
-}
+}*/
 .topButton{
   display: flex;
   justify-content: space-between;
