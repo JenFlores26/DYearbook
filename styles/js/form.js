@@ -31,3 +31,14 @@ addButtonGrad.addEventListener('click', function(){
 cancelButtonGrad.addEventListener('click', function(){
     addMemberGrad.classList.remove('form-active');
 });
+//submit4
+let addButtonMilestone = document.querySelector('.add-btn-m');
+let addMemberMilestone = document.querySelector('.addMember-m');
+let cancelButtonMilestone = document.querySelector('.cancel-btn-m');
+
+addButtonMilestone.addEventListener('click', function(){
+    addMemberMilestone.classList.add('form-active');
+});
+cancelButtonMilestone.addEventListener('click', function(){
+    addMemberMilestone.classList.remove('form-active');
+});

@@ -4,7 +4,7 @@
   padding:0;
 }
 
-.addMember, .addMember-reg-a, .addMember-reg-grad{
+.addMember, .addMember-reg-a, .addMember-reg-grad, .addMember-m{
   position: fixed;
   width: 100%;
   height: 100vh;
@@ -56,6 +56,6 @@ h2{
   height: 30px;
   padding-left: 10px;
 }
-.add-btn-reg-ao, .add-btn-reg-a, .add-btn-reg-grad:hover{
+.add-btn-reg-ao, .add-btn-reg-a, .add-btn-reg-grad, .add-btn-m:hover{
   cursor: pointer;
 }
