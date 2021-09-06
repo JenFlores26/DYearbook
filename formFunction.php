@@ -1,5 +1,6 @@
+<link rel="stylesheet" type="text/css" href="styles/style5.css">
 <div class="addMember">
-    <form action="" method="post"  enctype="multipart/form-data">
+    <form action="formFunction.php" method="post"  enctype="multipart/form-data">
         <h2>Add Member</h2>
 
         <div class="inputField">
@@ -28,7 +29,7 @@
     </form>
 </div>
 <?php
-
+  include 'db_connect.php';
   if(isset($_POST["submit1"])){
   $image = addslashes(file_get_contents($_FILES['f1']['tmp_name']));
   $firstName = $_POST['Fname'];
