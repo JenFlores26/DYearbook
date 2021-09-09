@@ -30,6 +30,7 @@
     </header>
     <ul class="nav">
       <li><a class="active" href="#reg-message">Message</a></li>
+      <li><a class="active" href="#reg-yearbook">Yearbooks</a></li>
       <li><a class="active" href="#reg-ao">Administrative Officers</a></li>
       <li><a class="active" href="#reg-affairs">Academic Affairs</a></li>
       <li><a class="active" href="#reg-grad">Graduates</a></li>
@@ -62,6 +63,9 @@ while($row=mysqli_fetch_array($query))
 <?php $cnt=$cnt+1;
 } ?>
 </table>
+    </section>
+    <section class="reg-section" id="reg-yearbook">
+      <button><i class="fas fa-book-open"></i></button>
     </section>
     <section class="reg-section" id="reg-ao">
       <div class="search-container">
