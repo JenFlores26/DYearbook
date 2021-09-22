@@ -66,6 +66,103 @@ while($row=mysqli_fetch_array($query))
     </section>
     <section class="reg-section" id="reg-yearbook">
       <button><i class="fas fa-book-open"></i></button>
+      <button style="float: right;" id="myBtn">+ New Database</button>
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>New Data</h2>
+          </div>
+          <div class="modal-body">
+              <form action="filem.php" method="post">
+              Data Year:
+              <?php $goose=date("Y"); ?>
+            <input type="number" min='2018' max="<?php echo $goose; ?>" name="f1" style="width:100%">
+          </div>
+          <div class="modal-footer">
+              <div>
+            <button class="loc" name="sub">ADD</button>
+          </div>
+      </div>
+      </form>
+          </div>
+        </div>
+
+      </div>
+      <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks the button, open the modal
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+      </script>
+      <div class="yb-php" style="background-color:lightgray;">
+       <form action="" method="get">
+        <?php
+     $db=mysqli_connect('localhost','root','','yearbook');
+     $goo= 2021;
+            $user_check_query = "SELECT * FROM folder ORDER BY year";
+            $result = mysqli_query($db, $user_check_query);
+
+            while ($row = mysqli_fetch_array($result)){
+               echo "<div class='container' style='float:left;'>";
+               echo "<div class='imgBx' style='border:none;'>";
+               echo '<a href="sample.php?call='.$row['year'].'"><img name="nooo" class="pic" src="styles/CvSU/db-icon.png"/></a>';
+
+               echo "<div class='contentt'>";
+               echo "<center>".$row['year'].".sql</center>";
+               echo "</div>";
+               echo "</div>";
+               echo "</div>";
+         }
+     ?>
+   </form>
+      </div>
+
+      <?php
+      if (isset($_POST['sub'])) {
+          $db=mysqli_connect('localhost', 'root', '', 'yearbook');
+          $yr= mysqli_real_escape_string($db, $_POST['f1']);
+
+               $user_check_query = "SELECT * FROM folder where year='$yr' LIMIT 1";
+               $result = mysqli_query($db, $user_check_query);
+               $user = mysqli_fetch_assoc($result);
+               if ($user) { // if user exists
+          if ($user['year'] === $yr) {
+                    echo "<script>alert('Database already exist!'); window.location='filem.php';</script>";
+               }
+        }
+               else{
+                  $adds="INSERT INTO folder (year) VALUES ('$yr')";
+                  mysqli_query($db, $adds);
+                  echo "<script>window.location='filem.php';</script>";
+               }
+      }
+
+      ?>
+
     </section>
     <section class="reg-section" id="reg-ao">
       <div class="search-container">
