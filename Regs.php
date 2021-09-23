@@ -74,13 +74,13 @@ while($row=mysqli_fetch_array($query))
                 <div class="modal-content">
                   <div class="modal-header">
                     <span class="close">&times</span>
-                    <h2>New Yearbook</h2>
+                    <h2 class="h2">New Yearbook</h2>
                   </div>
                   <div class="modal-body">
-                    <form class="" action="" method="post">
-                       Enter Year:
+                    <form class="addYear" action="" method="post">
+                       <p class="p">Enter Year:</p>
                       <input class="int" type="number" name="f1" min="2009" max="2012">
-                      <button class="loc"name="submit1">ADD</button>
+                      <button class="addbtnY" name="submit1">ADD</button>
                     </form>
                   </div>
                 </div>
