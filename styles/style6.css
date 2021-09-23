@@ -1,4 +1,4 @@
-/* CSS Style6 for Yearbook Layout
+/* CSS Style6 for Yearbook Layout tab
 
 <style>
 .alert {
@@ -220,3 +220,35 @@
     text-align: left;
   }
 }*/
+@import 'https://fonts.googleapis.com/css?family=Open+Sans:600,700';
+@import url(https://fonts.googleapis.com/css?family=Ubuntu);
+*{
+  padding:0;
+  margin:0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/*search-container*/
+.nav-sort{
+  margin-top:5vh;
+  width:100vw;
+  height: auto;
+  margin-right:100px;
+}
+.btns{
+  display: flex;
+  justify-content: space-between;
+}
+button{
+  background-color: #0275d8;
+  width: 20%;
+  border:none;
+  padding:6px;
+  color:white;
+}
+.int{
+  width: 100%;
+  padding-left: 10px;
+  border:none;
+  height: auto;
+}
