@@ -76,6 +76,7 @@ while($row=mysqli_fetch_array($query))
           </div>
           <br>
           <hr>
+          <p>Available Yearbook(s)</p>
       </div>
 
     </section>
