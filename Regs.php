@@ -15,6 +15,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" type="text/css" href="styles/style4.css">
   <link rel="stylesheet" type="text/css" href="styles/style5.css">
+    <link rel="stylesheet" type="text/css" href="styles/style6.css">
   <link rel="stylesheet" type="text/css" href="styles/style7.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="shortcut icon" href="styles/CvSU/logo.ico">
@@ -68,7 +69,22 @@ while($row=mysqli_fetch_array($query))
     <section class="reg-section" id="reg-yearbook">
       <div class="nav-sort">
           <div class="btns">
-              <button class=""><i class="fas fa-book-open"></i>Add Yearbook</button>
+              <button id="myBtn" class=""><i class="fas fa-book-open"></i>Add Yearbook</button>
+              <div class="modal" id="myModal">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <span class="close">&times</span>
+                    <h2>Year</h2>
+                  </div>
+                  <div class="modal-body">
+                    <form class="" action="" method="post">
+                       Enter Year:
+                      <input type="number" name="f1" min="2009" max="2012">
+                      <button name="submit1"></button>
+                    </form>
+                  </div>
+                </div>
+              </div>
               <div class="input-icons">
                 <input class="int" type="number" placeholder="Search by year" min="2014" max="2019" name="search-text" id="search_text">
                 <i class="fas fa-search"></i>
@@ -356,5 +372,6 @@ while($row=mysqli_fetch_array($query))
   </div>
   <script src="styles/js/reg.js"></script>
   <script src="styles/js/form.js"></script>
+  <script src="styles/js/yearbook.js"></script>
 </body>
 </html>
