@@ -103,7 +103,7 @@ while($row=mysqli_fetch_array($query))
 
                 while ($row = mysqli_fetch_array($result)){
                    echo "<div>";
-                   echo '<a href="sample.php?call='.$row['year'].'"><img class="pic" src="styles/CvSU/logo-removebg.png"/></a>';
+                   echo '<a href="sample.php?call='.$row['year'].'"><img class="pic" src="styles/CvSU/yearbook.png"/></a>';
                    echo "<center>".$row['year']."</center>";
                    echo "</div>";
              }

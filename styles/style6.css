@@ -14,7 +14,6 @@
 
 .yb-rows{
 	display: flex;
-  flex-direction: row;
 	height: 100%;
 	align-items:center;
 	flex-wrap: wrap;
@@ -26,6 +25,9 @@
 }
 .contain{
   display: flex;
+  align-items:center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 /* -----------------------*/
 .alert {
@@ -142,6 +144,8 @@
   width: 150px;
 }
 hr{
-  color: white;
-  height: 2px;
+  background-color: #e5fbff;
+  border-radius: 2px;
+  border:none;
+  height: 4px;
 }
