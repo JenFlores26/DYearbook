@@ -14,7 +14,6 @@
 
 .yb-rows{
 	display: flex;
-  flex-direction: row;
 	height: 100%;
 	align-items:center;
 	flex-wrap: wrap;
@@ -24,12 +23,11 @@
   height: 200px;
   display:flex;
 }
-
-form{
-  background-color: transparent;
-}
 .contain{
   display: flex;
+  align-items:center;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 /* -----------------------*/
 .alert {
@@ -146,6 +144,8 @@ form{
   width: 150px;
 }
 hr{
-  color: white;
-  height: 2px;
+  background-color: #e5fbff;
+  border-radius: 2px;
+  border:none;
+  height: 4px;
 }

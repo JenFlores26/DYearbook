@@ -103,7 +103,7 @@ while($row=mysqli_fetch_array($query))
 
                 while ($row = mysqli_fetch_array($result)){
                    echo "<div>";
-                   echo '<a href="sample.php?call='.$row['year'].'"><img class="pic"name="nooo" src="styles/CvSU/logo-removebg.png"/></a>';
+                   echo '<a href="sample.php?call='.$row['year'].'"><img class="pic" src="styles/CvSU/yearbook.png"/></a>';
                    echo "<center>".$row['year']."</center>";
                    echo "</div>";
              }
@@ -260,7 +260,7 @@ while($row=mysqli_fetch_array($query))
     <section class="reg-section" id="reg-grad">
       <div class="search-container">
         <div class="topButton">
-            <button class="add-btn-reg-grad"><i class="fas fa-user-plus"></i>Add Member</button>
+            <button class="add-btn-reg-grad"><i class="fas fa-user-plus"></i>Add Graduate</button>
             <div class="addMember-reg-grad">
                 <form action="formFunction.php" method="post"  enctype="multipart/form-data">
                     <h2>Add Member</h2>
