@@ -93,6 +93,23 @@ while($row=mysqli_fetch_array($query))
           <br>
           <hr>
           <p>Available Yearbook(s)</p>
+           <!--<form action="" method="get">-->
+           <div class="contain">
+          <?php
+         $db=mysqli_connect('localhost','root','','yearbook');
+         $goo= 2021;
+                $user_check_query = "SELECT * FROM folder ORDER BY year";
+                $result = mysqli_query($db, $user_check_query);
+
+                while ($row = mysqli_fetch_array($result)){
+                   echo "<div>";
+                   echo '<a href="sample.php?call='.$row['year'].'"><img class="pic"name="nooo" src="styles/CvSU/logo-removebg.png"/></a>';
+                   echo "<center>".$row['year']."</center>";
+                   echo "</div>";
+             }
+             ?>
+          <!-- </form>-->
+        </div>
       </div>
 
     </section>
