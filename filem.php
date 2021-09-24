@@ -90,7 +90,7 @@ window.onclick = function(event) {
             echo "</div>";
       }
   ?>
-</form>
+    </form>
    </div>
 </section>
 </body>
