@@ -24,10 +24,6 @@
   height: 200px;
   display:flex;
 }
-
-form{
-  background-color: transparent;
-}
 .contain{
   display: flex;
 }
