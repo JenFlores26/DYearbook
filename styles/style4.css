@@ -9,11 +9,22 @@
 }
 body {
   font-family: "Ubuntu", sans-serif;
-  transition: background-color .5s;
+  /*transition: background-color .5s;*/
   background-image: url('wallpapers/wallpaper2.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+}
+body::after{
+  content: "";
+  background: url('wallpapers/wallpaper2.jpg');
+  opacity: 0.5;
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 header{
   /*border:1px solid white;*/
