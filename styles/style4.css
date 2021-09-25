@@ -10,7 +10,7 @@
 }
 body::after{
   content: "";
-  background-image: url('wallpapers/wallpaper2.jpg');
+  background-image: url('CvSU/quad1.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
