@@ -6,7 +6,24 @@
   margin:0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
 }
+body::after{
+  content: "";
+  background-image: url('wallpapers/wallpaper2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 0.5;
+  /*background: rgba(0, 0, 0, 0.8);*/
+  top:0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: -1;
+}
+/*
 body {
   font-family: "Ubuntu", sans-serif;
   transition: background-color .5s;
@@ -14,7 +31,8 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-}
+
+}*/
 header{
   /*border:1px solid white;*/
   display: flex;
