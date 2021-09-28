@@ -92,7 +92,7 @@ while($row=mysqli_fetch_array($query))
           </div>
           <br>
           <hr>
-          <p>Available Yearbook(s)</p>
+          <br><h3>Available Yearbook(s)</h3><br>
            <!--<form action="" method="get">-->
            <div class="contain">
           <?php
