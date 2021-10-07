@@ -6,6 +6,7 @@
   height: auto;
   margin-right:100px;
 }
+
 .btns{
   display: flex;
   justify-content: space-between;
@@ -22,6 +23,8 @@
   width: 150px;
   height: 200px;
   display:flex;
+  margin:20px;
+  margin-bottom: 0;
 }
 .contain{
   display: flex;
