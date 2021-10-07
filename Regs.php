@@ -79,14 +79,14 @@ while($row=mysqli_fetch_array($query))
                   <div class="modal-body">
                     <form class="addYear" action="" method="post">
                        <p class="p">Enter Year:</p>
-                      <input class="int" type="number" name="f1" min="2009" max="2012">
-                      <button class="addbtnY" name="submit1">ADD</button>
+                      <input class="int" type="number" name="f1">
+                      <button class="addbtnY" type="submit" name="submit1">ADD</button>
                     </form>
                   </div>
                 </div>
               </div>
               <div class="input-icons">
-                <input class="inp"type="number" placeholder="Search by year" min="2014" max="2019" name="search-text" id="search_text">
+                <input class="inp"type="number" placeholder="Search by year" name="search-text" id="search_text">
                 <i class="fas fa-search"></i>
               </div>
           </div>
@@ -111,6 +111,27 @@ while($row=mysqli_fetch_array($query))
           <!-- </form>-->
         </div>
       </div>
+      <?php
+      if (isset($_POST['submit1'])) {
+          $db=mysqli_connect('localhost', 'root', '', 'yearbook');
+          $yr= mysqli_real_escape_string($db, $_POST['f1']);
+
+               $user_check_query = "SELECT * FROM folder where year='$yr' LIMIT 1";
+               $result = mysqli_query($db, $user_check_query);
+               $user = mysqli_fetch_assoc($result);
+               if ($user) { // if user exists
+          if ($user['year'] === $yr) {
+                    echo "<script>alert('Database already exist!'); window.location='filem.php';</script>";
+               }
+        }
+               else{
+                  $adds="INSERT INTO folder (year) VALUES ('$yr')";
+                  mysqli_query($db, $adds);
+                  echo "<script>window.location='Regs.php';</script>";
+               }
+      }
+
+      ?>
 
     </section>
     <section class="reg-section" id="reg-ao">
