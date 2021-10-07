@@ -62,4 +62,23 @@
     echo "<script>alert('Not added!');window.location='Regs.php';</script>";
   }
   }
+  //yearbook-tab adding year //
+  if (isset($_POST['submit1'])) {
+      $db=mysqli_connect('localhost', 'root', '', 'yearbook');
+      $yr= mysqli_real_escape_string($db, $_POST['f1']);
+
+      $user_check_query = "SELECT * FROM folder where year='$yr' LIMIT 1";
+      $result = mysqli_query($db, $user_check_query);
+      $user = mysqli_fetch_assoc($result);
+      if($user){ // if user exists
+        if ($user['year'] === $yr) {
+              echo "<script>alert('Database already exist!'); window.location='filem.php';</script>";
+        }
+      }
+      else{
+        $adds="INSERT INTO folder (year) VALUES ('$yr')";
+        mysqli_query($db, $adds);
+        echo "<script>window.location='filem.php';</script>";
+      }
+    }
 ?>
