@@ -159,6 +159,12 @@ i{
   text-decoration: none;
   color:#fff;
 }
+.bGreen{
+  background-color: #00a86a;
+}
+.bRed{
+  background-color: #c62c2c;
+}
 /*table*/
 table{
   background-color: #fff;
