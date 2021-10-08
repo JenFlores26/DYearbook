@@ -64,7 +64,10 @@
   }
   //yearbook-tab adding year //
   if (isset($_POST['submitYear'])) {
-      $yr= mysqli_real_escape_string($db_connect, $_POST['f1']);
+      #$yr= mysqli_real_escape_string($db_connect, $_POST['f1']);
+      $image = addslashes(file_get_contents($_FILES['c1']['tmp_name']));
+      $yr = $_POST['f1'];
+
       $user_check_query = "SELECT * FROM folder where year='$yr' LIMIT 1";
       $result = mysqli_query($db_connect, $user_check_query);
       $user = mysqli_fetch_assoc($result);
@@ -74,7 +77,7 @@
         }
       }
       else{
-        $adds="INSERT INTO folder (year) VALUES ('$yr')";
+        $adds="INSERT INTO folder (year,photo) VALUES ('$yr','$image')";
         mysqli_query($db_connect, $adds);
         echo "<script>window.location='Regs.php';</script>";
       }

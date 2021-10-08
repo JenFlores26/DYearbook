@@ -77,9 +77,11 @@ while($row=mysqli_fetch_array($query))
                     <h2 class="h2">New Yearbook</h2>
                   </div>
                   <div class="modal-body">
-                    <form class="addYear" action="formFunction.php" method="post">
+                    <form class="addYear" action="formFunction.php" method="post" enctype="multipart/form-data">
                        <p class="p">Enter Year:</p>
                       <input class="int" type="number" name="f1" required>
+                      <p>Select Cover Photo</p>
+                      <input type="file" name="c1" required>
                       <button class="addbtnY" type="submit" name="submitYear">ADD</button>
                     </form>
                   </div>
@@ -103,7 +105,7 @@ while($row=mysqli_fetch_array($query))
 
                 while ($row = mysqli_fetch_array($result)){
                    echo "<div>";
-                   echo '<a href="sample.php?call='.$row['year'].'"><img class="pic" src="styles/CvSU/yearbook.png"/></a>';
+                   echo '<a href="sample.php?call='.$row['year'].'"><img class="pic" src="data:image/jpeg;base64,'.base64_encode($row['photo']).'"/></a>';
                    echo "<center>".$row['year']."</center>";
                    echo "</div>";
              }
