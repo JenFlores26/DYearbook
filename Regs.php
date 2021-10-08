@@ -77,10 +77,10 @@ while($row=mysqli_fetch_array($query))
                     <h2 class="h2">New Yearbook</h2>
                   </div>
                   <div class="modal-body">
-                    <form class="addYear" action="" method="post">
+                    <form class="addYear" action="formFunction.php" method="post">
                        <p class="p">Enter Year:</p>
-                      <input class="int" type="number" name="f1">
-                      <button class="addbtnY" type="submit" name="submit1">ADD</button>
+                      <input class="int" type="number" name="f1" required>
+                      <button class="addbtnY" type="submit" name="submitYear">ADD</button>
                     </form>
                   </div>
                 </div>
@@ -111,28 +111,6 @@ while($row=mysqli_fetch_array($query))
           <!-- </form>-->
         </div>
       </div>
-      <?php
-      if (isset($_POST['submit1'])) {
-          $db=mysqli_connect('localhost', 'root', '', 'yearbook');
-          $yr= mysqli_real_escape_string($db, $_POST['f1']);
-
-          $user_check_query = "SELECT * FROM folder where year='$yr' LIMIT 1";
-          $result = mysqli_query($db, $user_check_query);
-          $user = mysqli_fetch_assoc($result);
-          if ($user) { // if user exists
-            if ($user['year'] === $yr) {
-                echo "<script>alert('Database already exist!'); window.location='Regs.php';</script>";
-            }
-          }
-          else{
-              $adds="INSERT INTO folder (year) VALUES ('$yr')";
-              mysqli_query($db, $adds);
-              echo "<script>window.location='Regs.php';</script>";
-            }
-          }
-
-      ?>
-
     </section>
     <section class="reg-section" id="reg-ao">
       <div class="search-container">
