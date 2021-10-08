@@ -16,7 +16,6 @@
   <link rel="stylesheet" type="text/css" href="styles/style4.css">
   <link rel="stylesheet" type="text/css" href="styles/style5.css">
     <link rel="stylesheet" type="text/css" href="styles/style6.css">
-  <link rel="stylesheet" type="text/css" href="styles/style7.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <link rel="shortcut icon" href="styles/CvSU/logo.ico">
 <script src="styles/js/jquery-3.6.0.js"></script>
@@ -104,8 +103,9 @@ while($row=mysqli_fetch_array($query))
                 $result = mysqli_query($db, $user_check_query);
 
                 while ($row = mysqli_fetch_array($result)){
-                   echo "<div>";
+                   echo "<div class='img-wrapper'>";
                    echo '<a href="sample.php?call='.$row['year'].'"><img class="pic" src="data:image/jpeg;base64,'.base64_encode($row['photo']).'"/></a>';
+                   echo '<span><input type="button" value="edit"><input type="button" value="delete"></span>';
                    echo "<center>".$row['year']."</center>";
                    echo "</div>";
              }
