@@ -105,7 +105,7 @@ while($row=mysqli_fetch_array($query))
                 while ($row = mysqli_fetch_array($result)){
                    echo "<div class='img-wrapper'>";
                    echo '<a href="sample.php?call='.$row['year'].'"><img class="pic" src="data:image/jpeg;base64,'.base64_encode($row['photo']).'"/></a>';
-                   echo '<span><input type="button" value="edit"><input type="button" value="delete"></span>';
+                   echo '<span><button><i class="fas fa-edit yb"></i></button><button><i class="fas fa-trash-alt yb"></i></button></span>';
                    echo "<center>".$row['year']."</center>";
                    echo "</div>";
              }
