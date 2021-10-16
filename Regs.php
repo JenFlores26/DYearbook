@@ -7,6 +7,8 @@
       echo "<script>alert('You must login first.');window.location='logout.php';</script>";
     }
     isset($_SESSION['User']);
+
+    $page = isset($_GET['page']) ? $_GET['page'] : 'reg_AO';
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,19 +32,18 @@
       </div>
     </header>
     <ul class="nav">
-      <li><a class="active" href="./Regs.php?page=message">Message</a></li>
-      <li><a class="active" href="./Regs.php?page=yearbooks">Yearbooks</a></li>
-      <li><a class="active" href="./Regs.php?page=reg_ao">Administrative Officers</a></li>
-      <li><a class="active" href="./Regs.php?page=reg_af">Academic Affairs</a></li>
-      <li><a class="active" href="./Regs.php?page=reg_grad">Graduates</a></li>
-      <li><a class="active" href="./Regs.php?page=milestones">Milestones & Activities</a></li>
+      <li class="<?php if($page == 'message'){echo 'active';}?>"><a href="./Regs.php?page=message">Message</a></li>
+      <li class="<?php if($page == 'yearbooks'){echo 'active';}?>"><a href="./Regs.php?page=yearbooks">Yearbooks</a></li>
+      <li class="<?php if($page == 'reg_ao'){echo 'active';}?>"><a href="./Regs.php?page=reg_ao">Administrative Officers</a></li>
+      <li class="<?php if($page == 'reg_af'){echo 'active';}?>"><a href="./Regs.php?page=reg_af">Academic Affairs</a></li>
+      <li class="<?php if($page == 'reg_grad'){echo 'active';}?>"><a href="./Regs.php?page=reg_grad">Graduates</a></li>
+      <li class="<?php if($page == 'milestones'){echo 'active';}?>"><a href="./Regs.php?page=milestones">Milestones & Activities</a></li>
       <li><a href="logout2.php">logout</a></li>
     </ul>
   </div>
   <div class="reg-container">
     <section class="reg-section">
       <?php
-      $page = isset($_GET['page']) ? $_GET['page'] : 'reg_AO';
       if(file_exists($page.".php")){
         include $page.'.php';
       }else{
