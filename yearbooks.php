@@ -36,9 +36,9 @@
 
             while ($row = mysqli_fetch_array($result)){
                echo "<div class='img-wrapper'>";
+               echo "<center>".$row['year']."</center>";
                echo '<a href="sample.php?call='.$row['year'].'"><img class="pic" src="data:image/jpeg;base64,'.base64_encode($row['photo']).'"/></a>';
                echo '<span><button><i class="fas fa-edit yb"></i></button><button><i class="fas fa-trash-alt yb"></i></button></span>';
-               echo "<center>".$row['year']."</center>";
                echo "</div>";
          }
          ?>
