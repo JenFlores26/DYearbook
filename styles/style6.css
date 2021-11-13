@@ -154,6 +154,7 @@ hr{
 }
 /* photo-cover */
 .img-wrapper{
+  margin-bottom: 20px;
 }
 .img-wrapper:hover img{
   /*-webkit-filter: blur(1px);
