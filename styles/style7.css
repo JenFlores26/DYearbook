@@ -93,7 +93,6 @@ form, .content {
   cursor: pointer;
 
 }
-
 .button1 {background: linear-gradient(to right, red, red);} /* Green */
 .button2 {background: linear-gradient(to right, #9C27B0, #E040FB);} /* Blue */
 }
