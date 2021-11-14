@@ -1,9 +1,9 @@
 <?php
-$mysqli = new mysqli('localhost','root','','yearbook') or die(mysqli_error($mysqli));
+include "db_connect.php";
 
 if(isset($_GET['edit1'])){
 	$id=$_GET['edit1'];
-	$result = $mysqli->query("SELECT * FROM tab2 WHERE id = '$id'") or die($mysqli->error());
+	$result = $db_connect->query("SELECT * FROM tab2 WHERE id = '$id'") or die($mysqli->error());
 	while($row = $result->fetch_assoc()){
 		echo "<html>";
 		echo "<head>";
@@ -32,7 +32,7 @@ if(isset($_GET['edit1'])){
 
 if(isset($_GET['edit2'])){
   $id=$_GET['edit2'];
-  $result = $mysqli->query("SELECT * FROM tab3 WHERE id = '$id'") or die($mysqli->error());
+  $result = $db_connect->query("SELECT * FROM tab3 WHERE id = '$id'") or die($mysqli->error());
   while($row = $result->fetch_assoc()){
     echo "<html>";
     echo "<head>";
@@ -61,7 +61,7 @@ if(isset($_GET['edit2'])){
 
 if(isset($_GET['edit3'])){
   $id=$_GET['edit3'];
-  $result = $mysqli->query("SELECT * FROM shs WHERE id = '$id'") or die($mysqli->error());
+  $result = $db_connect->query("SELECT * FROM shs WHERE id = '$id'") or die($mysqli->error());
   while($row = $result->fetch_assoc()){
     echo "<html>";
     echo "<head>";
