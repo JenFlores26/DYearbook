@@ -44,7 +44,7 @@ if(mysqli_num_rows($result) > 0)
 				<td>'.$row["year"].'</td>
         <td align="center">
                 <button class="button2 bGreen" style="border:1px solid;width:30px;">
-              <a class="delbtn" style="text-decoration:none; color:white;" href ="RegFunction.php?edit='.$row["id"].'">&#9998;</a>
+              <a class="delbtn" style="text-decoration:none; color:white;" href ="RegFunction.php?edit1='.$row["id"].'">&#9998;</a>
                 </button>
                 <button class="button3 bRed" style="border:1px solid;width:30px;">
               <a class="delbtn" style="text-decoration:none; color:white;" href="registarFunction.php?email='.$row["fname"].'">&#128465;</a>
