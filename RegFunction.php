@@ -9,7 +9,8 @@ if(isset($_GET['edit1'])){
 		echo "<head>";
 		echo "<title>Edit Info</title>";
 		echo "<link rel='stylesheet' type='text/css' href='styles/style2.css'>";
-		echo "<link rel='stylesheet' type='text/css' href='styles/style7.css'>";
+		echo "<link rel='stylesheet'type='text/css'href='styles/style7.css'>";
+
 		echo "</head>";
 		echo "<body>";
 		echo "<div class='header'>
@@ -37,7 +38,8 @@ if(isset($_GET['edit2'])){
     echo "<head>";
     echo "<title>Edit Info</title>";
     echo "<link rel='stylesheet' type='text/css' href='styles/style2.css'>";
-		echo "<link rel='stylesheet' type='text/css' href='styles/style7.css'>";
+		echo "<link rel='stylesheet'type='text/css'href='styles/style7.css'>";
+
     echo "</head>";
     echo "<body>";
     echo "<div class='header'>
@@ -65,7 +67,8 @@ if(isset($_GET['edit3'])){
     echo "<head>";
     echo "<title>Edit Info</title>";
     echo "<link rel='stylesheet' type='text/css' href='styles/style2.css'>";
-		echo "<link rel='stylesheet' type='text/css' href='styles/style7.css'>";
+		echo "<link rel='stylesheet'type='text/css'href='styles/style7.css'>";
+		
     echo "</head>";
     echo "<body>";
     echo "<div class='header'>
